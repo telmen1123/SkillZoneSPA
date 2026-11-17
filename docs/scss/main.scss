@@ -1,0 +1,172 @@
+
+@use "sass:color";
+@use "navbar";
+@use "footer";
+
+$primaryColor: #1455ff;
+$secondaryColor: #10b981;
+$backgroundColor: #f6f8fc;
+$textColor: #101828;
+$mutedColor: #667085;
+$borderColor: #e4e7ec;
+
+$primaryDark: color.scale(
+    $primaryColor,
+    $lightness: -20%
+);
+
+@use "../../node_modules/bulma/sass" with (
+    $primary: $primaryColor,
+    $link: $primaryColor,
+    $family-primary: ("Inter", sans-serif)
+);
+
+:root {
+    --app-primary: #{$primaryColor};
+    --app-primary-dark: #{$primaryDark};
+    --app-secondary: #{$secondaryColor};
+    --app-background: #{$backgroundColor};
+    --app-text: #{$textColor};
+    --app-muted: #{$mutedColor};
+    --app-border: #{$borderColor};
+
+    --app-surface: #ffffff;
+    --app-radius: 16px;
+
+    --app-shadow:
+        0 4px 20px rgba(16, 24, 40, 0.06);
+
+    color-scheme: light;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: "Inter", sans-serif;
+    color: var(--app-text);
+    background: var(--app-background);
+
+    -webkit-font-smoothing: antialiased;
+}
+
+#app {
+    flex: 1;
+    width: 100%;
+}
+
+.app-container {
+    width: min(1440px, calc(100% - 48px));
+    margin-inline: auto;
+}
+
+h1, h2, h3, h4 {
+    color: var(--app-text);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+a {
+    color: var(--app-primary);
+    text-decoration: none;
+
+    transition: color 180ms ease;
+
+    &:hover {
+        color: var(--app-primary-dark);
+    }
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.app-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 12px 22px;
+    border: none;
+    border-radius: 10px;
+
+    background: var(--app-primary);
+    color: white;
+
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition:
+        background 180ms ease,
+        transform 180ms ease;
+
+    &:hover {
+        background: var(--app-primary-dark);
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+// Картын үндсэн загвар
+.app-card {
+    padding: 20px;
+
+    background: var(--app-surface);
+    border: 1px solid var(--app-border);
+    border-radius: var(--app-radius);
+
+    transition:
+        box-shadow 200ms ease,
+        transform 200ms ease;
+
+    &:hover {
+        box-shadow: var(--app-shadow);
+        transform: translateY(-3px);
+    }
+}
+
+// Keyboard navigation
+:focus-visible {
+    outline: 3px solid var(--app-primary);
+    outline-offset: 4px;
+}
+
+// Mobile responsive
+@media (width <= 768px) {
+    .app-container {
+        width: calc(100% - 32px);
+    }
+
+    .app-card {
+        padding: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
