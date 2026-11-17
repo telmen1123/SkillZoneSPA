@@ -4,6 +4,12 @@ import {
     getLocalizedValue
 } from "./i18n/i18n.js";
 
+import {
+    renderCoursesPage,
+    bindCoursesPage
+} from "./pages/coursesPage.js";
+
+// Дахин ашиглагдах хуудасны загвар
 function createPage(titleKey, icon, description) {
 
     return () => `
@@ -44,7 +50,7 @@ function createPage(titleKey, icon, description) {
     `;
 }
 
-// SPA хуудасны замууд
+// SPA Routing
 export const routes = {
 
     "/": createPage(
@@ -56,14 +62,10 @@ export const routes = {
         }
     ),
 
-    "/courses": createPage(
-        "courses.title",
-        "fa-book-open",
-        {
-            mn: "Бүх цахим сургалтын жагсаалт",
-            en: "Explore all online courses"
-        }
-    ),
+    "/courses": {
+        render: renderCoursesPage,
+        bind: bindCoursesPage
+    },
 
     "/instructors": createPage(
         "nav.instructors",
