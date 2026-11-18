@@ -1,0 +1,488 @@
+
+@use "sass:color";
+@use "course-card";
+@use "cart";
+@use "navbar-count";
+@use "wishlist";
+@use "course-details";
+@use "home";
+@use "instructors";
+@use "blog";
+@use "auth";
+@use "register";
+@use "profile";
+@use "navbar-auth";
+@use "checkout";
+@use "learning";
+@use "player";
+@use "certificate";
+@use "calendar";
+@use "dashboard-sidebar";
+@use "notifications";
+@use "navbar-fix";
+@use "settings";
+@use "orders";
+@use "reviews";
+@use "final-design";
+@use "dark-mode";
+
+$primaryColor: #1455ff;
+$secondaryColor: #10b981;
+
+$backgroundColor: #f6f8fc;
+$textColor: #101828;
+$mutedColor: #667085;
+$borderColor: #e4e7ec;
+
+$primaryDark: color.scale(
+    $primaryColor,
+    $lightness: -20%
+);
+
+$secondaryDark: color.scale(
+    $secondaryColor,
+    $lightness: -15%
+);
+
+// ==============================
+// 2. Bulma framework
+// ==============================
+
+@use "../../node_modules/bulma/sass" with (
+    $primary: $primaryColor,
+    $link: $primaryColor,
+    $family-primary: ("Inter", sans-serif)
+);
+
+// ==============================
+// 3. Components
+// ==============================
+
+@use "navbar";
+@use "footer";
+@use "buttons";
+@use "sidebarPageLayout";
+@use "sidebarMenuList";
+@use "pageTableContentsLayout";
+@use "components/imageModal";
+
+// ==============================
+// 4. CSS variables
+// ==============================
+
+:root {
+
+    --app-primary: #{$primaryColor};
+    --app-primary-dark: #{$primaryDark};
+
+    --app-secondary: #{$secondaryColor};
+    --app-secondary-dark: #{$secondaryDark};
+
+    --app-background: #{$backgroundColor};
+    --app-text: #{$textColor};
+    --app-muted: #{$mutedColor};
+    --app-border: #{$borderColor};
+
+    --app-surface: #ffffff;
+    --app-radius: 16px;
+
+    --app-shadow:
+        0 4px 20px rgba(16, 24, 40, 0.06);
+
+    --app-shadow-lg:
+        0 12px 40px rgba(16, 24, 40, 0.12);
+
+    // Sidebar variables
+
+    --sidebar-width: clamp(260px, 22vw, 320px);
+    --sidebar-bg: #ffffff;
+
+    --navbar-height: 76px;
+
+    --page-bg: var(--app-background);
+    --border: var(--app-border);
+
+    --text-main: var(--app-text);
+    --text-soft: var(--app-muted);
+
+    --active-bg: #edf3ff;
+    --hover-bg: #f1f4fa;
+
+    --overlay: rgba(15, 23, 42, 0.55);
+
+    --transition: 200ms ease;
+
+    color-scheme: light;
+
+}
+
+// ==============================
+// 5. Global styles
+// ==============================
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: "Inter", sans-serif;
+
+    color: var(--app-text);
+
+    background: var(--app-background);
+
+    -webkit-font-smoothing: antialiased;
+
+}
+
+#app {
+
+    flex: 1;
+    width: 100%;
+
+}
+
+.app-container {
+
+    width: min(1440px, calc(100% - 48px));
+
+    margin-inline: auto;
+
+}
+
+.app-inner-container {
+
+    width: 100%;
+    min-width: 0;
+
+}
+
+h1,
+h2,
+h3,
+h4 {
+
+    color: var(--app-text);
+
+    font-weight: 700;
+
+    letter-spacing: -0.025em;
+
+}
+
+a {
+
+    color: var(--app-primary);
+
+    text-decoration: none;
+
+    transition: color var(--transition);
+
+    &:hover {
+
+        color: var(--app-primary-dark);
+
+    }
+
+}
+
+img {
+
+    display: block;
+
+    max-width: 100%;
+
+    object-fit: cover;
+
+}
+
+button,
+input,
+select,
+textarea {
+
+    font: inherit;
+
+}
+
+// ==============================
+// 6. Buttons
+// ==============================
+
+.app-button {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 12px 22px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: var(--app-primary);
+
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition),
+        transform var(--transition);
+
+    &:hover {
+
+        background: var(--app-primary-dark);
+
+        color: white;
+
+        transform: translateY(-2px);
+
+    }
+
+    &:active {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+// ==============================
+// 7. Card
+// ==============================
+
+.app-card {
+
+    padding: 20px;
+
+    background: var(--app-surface);
+
+    border: 1px solid var(--app-border);
+
+    border-radius: var(--app-radius);
+
+    transition:
+        box-shadow var(--transition),
+        transform var(--transition);
+
+    &:hover {
+
+        box-shadow: var(--app-shadow);
+
+        transform: translateY(-3px);
+
+    }
+
+}
+
+// ==============================
+// 8. Page layout
+// ==============================
+
+.app-page {
+
+    padding-block: 32px 48px;
+
+}
+
+.app-page-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+
+}
+
+.app-page-heading {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+.app-title {
+
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    margin-bottom: 10px;
+
+}
+
+.app-page-subtitle {
+
+    color: var(--app-muted);
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+
+}
+
+.app-page-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+.app-line {
+
+    height: 1px;
+
+    background: var(--app-border);
+
+    margin-bottom: 24px;
+
+}
+
+.app-page-content {
+
+    min-width: 0;
+
+    width: 100%;
+
+}
+
+// ==============================
+// 9. Accessibility
+// ==============================
+
+:focus-visible {
+
+    outline: 3px solid var(--app-primary);
+
+    outline-offset: 4px;
+
+}
+
+::selection {
+
+    background: #dce7ff;
+
+    color: #073bc7;
+
+}
+
+// ==============================
+// 10. Tablet
+// ==============================
+
+@media (width <= 1023px) {
+
+    :root {
+
+        --sidebar-width: 260px;
+
+    }
+
+    .app-page {
+
+        padding-block: 24px 32px;
+
+    }
+
+}
+
+// ==============================
+// 11. Mobile
+// ==============================
+
+@media (width <= 768px) {
+
+    .app-container {
+
+        width: calc(100% - 32px);
+
+    }
+
+    .app-card {
+
+        padding: 16px;
+
+    }
+
+    .app-page {
+
+        padding-block: 20px 28px;
+
+    }
+
+    .app-page-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+    }
+
+    .app-title {
+
+        font-size: 1.6rem;
+
+    }
+
+    .app-page-actions {
+
+        width: 100%;
+
+    }
+
+}
+
+// ==============================
+// 12. Reduced motion
+// ==============================
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation: none !important;
+
+        transition: none !important;
+
+        scroll-behavior: auto !important;
+
+    }
+
+}

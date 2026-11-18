@@ -1,0 +1,337 @@
+.dashboard-page .dashboard-sidebar {
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    width: 100%;
+    min-width: 0;
+
+    padding: 18px;
+
+    background: #ffffff;
+    border: 1px solid #e4e7ec;
+    border-radius: 18px;
+
+    box-shadow: 0 4px 20px rgba(16, 24, 40, 0.03);
+
+    box-sizing: border-box;
+
+    align-self: start;
+
+
+    // BRAND
+
+    .dashboard-sidebar-brand {
+
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        padding: 8px 0 20px;
+        margin: 0;
+
+        border-bottom: 1px solid #eef0f4;
+
+    }
+
+    .dashboard-sidebar-logo {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex-shrink: 0;
+
+        width: 44px;
+        height: 44px;
+
+        background: #eef3ff;
+        color: #1455ff;
+
+        border-radius: 12px;
+
+        font-size: 20px;
+
+    }
+
+    .dashboard-brand-info {
+
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        gap: 3px;
+
+        strong {
+
+            font-size: 19px;
+            font-weight: 800;
+            color: #1455ff;
+
+        }
+
+        span {
+
+            font-size: 11px;
+            color: #667085;
+
+        }
+
+    }
+
+
+    // MENU
+
+    .dashboard-menu {
+
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        padding: 0;
+        margin: 0;
+
+    }
+
+    .dashboard-menu-label {
+
+        padding: 0 10px;
+        margin: 0 0 10px;
+
+        color: #98a2b3;
+
+        font-size: 10px;
+        font-weight: 700;
+
+        letter-spacing: 1.5px;
+
+    }
+
+
+    // LINKS AND BUTTONS
+
+    .dashboard-menu-item {
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        gap: 12px;
+
+        width: 100%;
+        min-height: 44px;
+
+        padding: 11px 12px;
+        margin: 0;
+
+        border: none;
+        border-radius: 9px;
+
+        background: transparent;
+        color: #475467;
+
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.5;
+
+        text-decoration: none;
+        text-align: left;
+
+        box-sizing: border-box;
+        cursor: pointer;
+
+        transition: background 0.2s, color 0.2s;
+
+
+        > i,
+        > svg {
+
+            flex: 0 0 20px;
+
+            width: 20px;
+
+            color: inherit;
+
+            font-size: 16px;
+            text-align: center;
+
+        }
+
+        > span {
+
+            flex: 1;
+            min-width: 0;
+
+            color: inherit;
+
+        }
+
+
+        &:hover {
+
+            background: #eef3ff;
+            color: #1455ff;
+
+        }
+
+
+        &.is-active {
+
+            background: #1455ff;
+            color: #ffffff;
+
+            box-shadow: 0 4px 10px #1455ff25;
+
+        }
+
+
+        &:focus-visible {
+
+            outline: 2px solid #1455ff;
+            outline-offset: 2px;
+
+        }
+
+    }
+
+
+    // BOTTOM
+
+    .dashboard-sidebar-bottom {
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 6px;
+
+        margin-top: auto;
+        padding-top: 18px;
+
+        border-top: 1px solid #eef0f4;
+
+    }
+
+
+    // LOGOUT
+
+    .dashboard-menu-item.dashboard-logout {
+
+        background: #fff1f2;
+        color: #dc2626;
+
+        &:hover {
+
+            background: #fee2e2;
+            color: #b91c1c;
+
+        }
+
+    }
+
+}
+
+
+// DASHBOARD LAYOUT
+
+.dashboard-page .dashboard-layout {
+
+    display: grid;
+
+    grid-template-columns: 260px minmax(0, 1fr);
+
+    align-items: start;
+
+    gap: 25px;
+
+}
+
+.dashboard-page .dashboard-main {
+
+    width: 100%;
+    min-width: 0;
+
+}
+
+
+// TABLET
+
+@media (max-width: 1100px) {
+
+    .dashboard-page .dashboard-layout {
+
+        grid-template-columns: 230px minmax(0, 1fr);
+
+        gap: 18px;
+
+    }
+
+}
+
+
+// MOBILE
+
+@media (max-width: 850px) {
+
+    .dashboard-page .dashboard-layout {
+
+        grid-template-columns: minmax(0, 1fr);
+
+    }
+
+    .dashboard-page .dashboard-sidebar {
+
+        position: static;
+
+        width: 100%;
+
+        padding: 15px;
+
+        .dashboard-menu {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+
+            gap: 6px;
+
+        }
+
+        .dashboard-menu-label {
+
+            grid-column: 1 / -1;
+
+        }
+
+        .dashboard-menu-item {
+
+            font-size: 12px;
+
+        }
+
+        .dashboard-sidebar-bottom {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        }
+
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .dashboard-page .dashboard-sidebar {
+
+        .dashboard-menu,
+        .dashboard-sidebar-bottom {
+
+            grid-template-columns: 1fr;
+
+        }
+
+    }
+
+}

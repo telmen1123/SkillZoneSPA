@@ -1,0 +1,791 @@
+html[data-theme="dark"] {
+
+    color-scheme: dark;
+
+    --sz-primary: #83aaff;
+    --sz-primary-hover: #a8c5ff;
+
+    --sz-background: #0b1120;
+    --sz-surface: #151e30;
+    --sz-surface-secondary: #1c293d;
+
+    --sz-text: #f1f5f9;
+    --sz-muted: #a0aec0;
+    --sz-border: #2c3950;
+
+    --sz-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+
+    --app-primary: #83aaff;
+
+    --bulma-scheme-main: #151e30;
+    --bulma-scheme-main-bis: #1c293d;
+    --bulma-background: #0b1120;
+    --bulma-text: #e2e8f0;
+    --bulma-text-strong: #f1f5f9;
+    --bulma-border: #2c3950;
+
+
+    body,
+    #app,
+    .website,
+    .dashboard-page,
+    .course-details-page,
+    .orders-page,
+    .settings-page {
+        background-color: var(--sz-background);
+        color: var(--sz-text);
+    }
+
+
+    // NAVBAR
+
+    #navbar,
+    #navbar .app-navbar,
+    #navbar .navbar-container,
+    #navbar .navbar-content {
+        background-color: var(--sz-surface) !important;
+        border-color: var(--sz-border) !important;
+        color: var(--sz-text);
+    }
+
+
+    #navbar .brand-name,
+    #navbar .nav-link,
+    #navbar .nav-icon-button,
+    #navbar .navbar-profile-name,
+    #navbar .navbar-profile-toggle,
+    #navbar .mobile-toggle {
+        color: var(--sz-text) !important;
+    }
+
+
+    #navbar .nav-link:hover,
+    #navbar .nav-link.is-active,
+    #navbar .nav-icon-button.is-active {
+        color: var(--sz-primary) !important;
+    }
+
+
+    #navbar .navbar-search,
+    #navbar .language-switcher {
+        background: var(--sz-surface-secondary) !important;
+        border-color: var(--sz-border) !important;
+    }
+
+
+    #navbar .language-button:not(.is-active) {
+        color: var(--sz-muted);
+    }
+
+
+    .navbar-profile-dropdown {
+        background: var(--sz-surface) !important;
+        border-color: var(--sz-border) !important;
+        box-shadow: var(--sz-shadow);
+
+        a,
+        button {
+            color: var(--sz-text);
+
+            &:hover {
+                background: var(--sz-surface-secondary);
+            }
+        }
+
+
+        .navbar-profile-logout {
+            color: #f87171;
+        }
+    }
+
+
+    .navbar-profile-info {
+        border-color: var(--sz-border);
+    }
+
+
+
+    #footer,
+    .app-footer,
+    .footer {
+        background-color: #101827 !important;
+        border-color: var(--sz-border);
+        color: var(--sz-muted);
+
+        h2,
+        h3,
+        h4,
+        strong {
+            color: var(--sz-text);
+        }
+
+        a {
+            color: var(--sz-muted);
+
+            &:hover {
+                color: var(--sz-primary);
+            }
+        }
+    }
+
+
+
+    .box,
+    .card,
+    .card-content,
+    .app-card,
+    .course-card,
+    .instructor-card,
+    .blog-card,
+    .learning-card,
+    .order-card,
+    .settings-card,
+    .cart-item,
+    .cart-summary,
+    .checkout-card,
+    .checkout-summary,
+    .dashboard-card,
+    .dashboard-stat-card,
+    .dashboard-sidebar,
+    .dashboard-panel,
+    .details-section,
+    .details-purchase-card,
+    .course-reviews,
+    .review-form,
+    .review-card,
+    .review-empty,
+    .calendar-card,
+    .calendar-panel,
+    .certificate-card,
+    .sz-notification,
+    .notification-card,
+    .auth-card,
+    .login-card,
+    .register-card,
+    .modal-card-body,
+    .modal-card-head,
+    .modal-card-foot {
+        background-color: var(--sz-surface) !important;
+        border-color: var(--sz-border) !important;
+        color: var(--sz-text);
+        box-shadow: var(--sz-shadow);
+    }
+
+
+
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .title,
+    .label,
+    strong,
+    .course-title,
+    .course-card-title,
+    .details-prices strong,
+    .review-score strong,
+    .review-user strong {
+        color: var(--sz-text);
+    }
+
+
+
+    .subtitle,
+    .help,
+    .details-muted,
+    .course-description,
+    .course-instructor,
+    .review-card > p,
+    .review-score span,
+    .review-bar-row,
+    #reviewRatingLabel,
+    .has-text-grey,
+    .has-text-grey-dark,
+    .navbar-profile-info small {
+        color: var(--sz-muted) !important;
+    }
+
+
+
+    input:not([type="checkbox"]):not([type="radio"]),
+    textarea,
+    select,
+    .input,
+    .textarea,
+    .select select {
+        background-color: var(--sz-surface-secondary);
+        border-color: var(--sz-border);
+        color: var(--sz-text);
+
+        &::placeholder {
+            color: #8897ad;
+        }
+
+        &:focus {
+            border-color: #6794ff;
+        }
+    }
+
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        accent-color: #1455ff;
+    }
+
+
+
+    .review-summary,
+    .details-info-item,
+    .details-curriculum,
+    .details-instructor,
+    .dashboard-menu-item:not(.is-active),
+    .orders-toolbar,
+    .tabs,
+    .panel,
+    .pagination-link,
+    .pagination-next,
+    .pagination-previous {
+        background-color: var(--sz-surface-secondary);
+        border-color: var(--sz-border);
+        color: var(--sz-text);
+    }
+
+
+    .dashboard-menu-item:not(.is-active):hover {
+        background-color: #253c60;
+        color: #a8c5ff;
+    }
+
+
+    .review-bar {
+        background-color: #30415b;
+    }
+
+
+    .review-notice {
+        background-color: #192e51;
+        color: #a8c5ff;
+    }
+
+
+    .review-message.is-success {
+        background-color: #12382e;
+        color: #6ee7b7;
+    }
+
+
+    .review-message.is-error,
+    .review-delete-button {
+        background-color: #44202b;
+        color: #fca5a5;
+    }
+
+
+
+    .table {
+        background-color: var(--sz-surface);
+        color: var(--sz-text);
+
+        th,
+        td {
+            border-color: var(--sz-border);
+            color: var(--sz-text);
+        }
+
+        &.is-striped tbody tr:not(.is-selected):nth-child(even) {
+            background-color: var(--sz-surface-secondary);
+        }
+
+        &.is-hoverable tbody tr:hover {
+            background-color: #25344b;
+        }
+    }
+
+
+    // DIALOG
+
+    dialog {
+        background-color: var(--sz-surface);
+        color: var(--sz-text);
+        border: 1px solid var(--sz-border);
+    }
+
+
+    dialog::backdrop {
+        background: rgba(0, 0, 0, 0.75);
+    }
+
+
+    hr {
+        background-color: var(--sz-border);
+    }
+
+
+
+    .navbar-auth-avatar,
+    .review-avatar,
+    .details-avatar {
+        background-color: #233c67;
+        color: #a8c5ff;
+    }
+
+
+    .button.is-primary,
+    .review-submit-button,
+    .login-button,
+    .dashboard-menu-item.is-active,
+    .details-cart-button,
+    .back-to-top {
+        background-color: #1455ff;
+        color: #ffffff;
+    }
+
+}
+html[data-theme="dark"],
+html[data-theme="dark"] body,
+html[data-theme="dark"] #app {
+    background: #0b1120 !important;
+    color: #f1f5f9 !important;
+}
+
+html[data-theme="dark"] {
+
+    #navbar,
+    #navbar .app-navbar,
+    #navbar .navbar-container,
+    #navbar .navbar-content,
+    #footer,
+    .app-footer {
+        background: #151e30 !important;
+        color: #f1f5f9 !important;
+        border-color: #2c3950 !important;
+    }
+
+    .app-container,
+    .home-page,
+    .courses-page,
+    .dashboard-page,
+    .course-details-page,
+    .section,
+    .app-page {
+        background-color: transparent !important;
+        color: #f1f5f9 !important;
+    }
+
+    .course-card,
+    .app-card,
+    .card,
+    .card-content,
+    .box,
+    .dashboard-sidebar,
+    .dashboard-card,
+    .dashboard-stat-card,
+    .details-section,
+    .details-purchase-card,
+    .course-reviews,
+    .instructor-card,
+    .blog-card,
+    .learning-card,
+    .order-card,
+    .settings-card {
+        background: #151e30 !important;
+        border-color: #2c3950 !important;
+        color: #f1f5f9 !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    .title,
+    .subtitle,
+    .label,
+    .brand-name,
+    .nav-link {
+        color: #f1f5f9 !important;
+    }
+
+    input:not([type="radio"]):not([type="checkbox"]),
+    textarea,
+    select {
+        background: #1c293d !important;
+        border-color: #2c3950 !important;
+        color: #f1f5f9 !important;
+    }
+
+}
+// FINAL DARK MODE FIX
+
+html[data-theme="dark"] {
+
+    --app-primary: #1455ff;
+    --app-background: #0b1120;
+    --app-surface: #151e30;
+    --app-text: #f1f5f9;
+    --app-muted: #94a3b8;
+    --app-border: #2c3950;
+
+
+    // HOME HERO
+
+    .home-hero,
+    .hero-section,
+    .hero-banner,
+    .app-hero,
+    .hero,
+    [class*="hero-section"] {
+
+        background: linear-gradient(
+            135deg,
+            #0b1120 0%,
+            #15233d 50%,
+            #172554 100%
+        ) !important;
+
+        color: #f1f5f9 !important;
+
+    }
+
+
+    // HERO CONTENT
+
+    .hero-content,
+    .hero-text,
+    .hero-left,
+    .home-hero-content {
+
+        background: transparent !important;
+
+        h1,
+        h2 {
+            color: #f1f5f9 !important;
+        }
+
+        p {
+            color: #a0aec0 !important;
+        }
+
+        h1 span,
+        h2 span {
+            color: #83aaff !important;
+        }
+
+    }
+
+
+    // SEARCH BOX
+
+    .hero-search,
+    .hero-search-form,
+    .home-search,
+    .home-search-form,
+    .hero-search-box {
+
+        background: #151e30 !important;
+        border-color: #2c3950 !important;
+        color: #f1f5f9 !important;
+
+        input {
+            background: transparent !important;
+            color: #f1f5f9 !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        button {
+            background: #1455ff !important;
+            color: #ffffff !important;
+        }
+
+    }
+
+
+    // FLOATING CARDS
+
+    .floating-card,
+    .float-card,
+    .hero-floating-card,
+    .hero-float,
+    .hero-badge {
+
+        background: #1c293d !important;
+        border-color: #2c3950 !important;
+        color: #f1f5f9 !important;
+
+        span,
+        strong {
+            color: #f1f5f9 !important;
+        }
+
+        i,
+        svg {
+            color: #83aaff !important;
+        }
+
+    }
+
+
+    // HOME STATISTICS
+
+    .home-stats,
+    .stats-section,
+    .stats-container,
+    .stats-wrapper,
+    .stats-grid,
+    .stats-card,
+    .stat-card,
+    .stat-item,
+    .home-stat-item {
+
+        background: #151e30 !important;
+        border-color: #2c3950 !important;
+        color: #f1f5f9 !important;
+
+        h2,
+        h3,
+        strong {
+            color: #f1f5f9 !important;
+        }
+
+        p,
+        small {
+            color: #94a3b8 !important;
+        }
+
+    }
+
+
+    // HOME SECTIONS
+
+    .home-section,
+    .featured-section,
+    .featured-courses,
+    .categories-section,
+    .category-section,
+    .instructors-section,
+    .benefits-section,
+    .features-section,
+    .popular-courses,
+    .testimonials-section {
+
+        background: #0b1120 !important;
+        color: #f1f5f9 !important;
+
+    }
+
+
+    // CARDS
+
+    .category-card,
+    .feature-card,
+    .benefit-card,
+    .testimonial-card,
+    .course-card,
+    .instructor-card,
+    .blog-card {
+
+        background: #151e30 !important;
+        border-color: #2c3950 !important;
+        color: #f1f5f9 !important;
+
+        p,
+        small {
+            color: #94a3b8 !important;
+        }
+
+    }
+
+
+    // CARD CONTENT
+
+    .course-card-body,
+    .course-card-content,
+    .course-card-footer,
+    .category-card-body,
+    .instructor-card-body {
+
+        background: transparent !important;
+        border-color: #2c3950 !important;
+        color: #f1f5f9 !important;
+
+    }
+
+
+    // PRIMARY BUTTONS
+
+    .hero-button,
+    .hero-primary-button,
+    .primary-button,
+    .btn-primary,
+    .button.is-primary {
+
+        background: #1455ff !important;
+        border-color: #1455ff !important;
+        color: #ffffff !important;
+
+        &:hover {
+            background: #1044da !important;
+        }
+
+    }
+
+
+    // SECTION TEXT
+
+    .section-title,
+    .section-heading,
+    .section-header h2 {
+
+        color: #f1f5f9 !important;
+
+    }
+
+    .section-description,
+    .section-subtitle,
+    .section-header p {
+
+        color: #94a3b8 !important;
+
+    }
+
+}
+// HOME DARK MODE FINAL PATCH
+
+html[data-theme="dark"] {
+
+    // CATEGORY CARDS
+
+    .home-category-card,
+    .home-category,
+    .category-item,
+    .category-box,
+    [class*="category-card"],
+    [class*="category-item"] {
+        background: #151e30 !important;
+        border-color: #2c3950 !important;
+        color: #f1f5f9 !important;
+
+        h3,
+        h4,
+        strong {
+            color: #f1f5f9 !important;
+        }
+
+        p,
+        small {
+            color: #a0aec0 !important;
+        }
+
+        &:hover {
+            background: #1c293d !important;
+            border-color: #6794ff !important;
+        }
+    }
+
+
+    // STATISTICS CONTAINER
+
+    .home-stats-card,
+    .home-stats-grid,
+    .home-stats-inner,
+    .home-stats-wrapper,
+    .stats-bar,
+    .stats-inner,
+    .stats-box,
+    .stats-content,
+    [class*="stats-wrapper"] {
+        background: #151e30 !important;
+        border-color: #2c3950 !important;
+        box-shadow: none !important;
+    }
+
+
+    // HERO FLOATING ELEMENTS
+
+    .hero-tag,
+    .hero-float-card,
+    .floating-badge,
+    .floating-item,
+    .hero-floating-item,
+    [class*="hero-float"],
+    [class*="floating-card"] {
+        background: #1c293d !important;
+        color: #f1f5f9 !important;
+        border-color: #2c3950 !important;
+
+        span {
+            color: #f1f5f9 !important;
+        }
+    }
+
+
+    // WHY SKILLZONE
+
+    .why-section,
+    .why-card,
+    .why-skillzone,
+    .home-why,
+    .home-benefits,
+    .home-features,
+    .home-cta,
+    .cta-section,
+    [class*="why-section"],
+    [class*="why-card"] {
+        background: #151e30 !important;
+        color: #f1f5f9 !important;
+        border-color: #2c3950 !important;
+
+        p {
+            color: #a0aec0 !important;
+        }
+    }
+
+
+    // COURSE CARD TEXT
+
+    .course-card {
+
+        color: #f1f5f9 !important;
+
+        .course-title,
+        h3,
+        h4,
+        strong {
+            color: #f1f5f9 !important;
+        }
+
+        p,
+        small,
+        .course-meta,
+        .course-meta span,
+        .course-card-meta,
+        .course-card-meta span,
+        .course-instructor,
+        .course-duration,
+        .course-students,
+        .course-lessons,
+        del {
+            color: #a0aec0 !important;
+        }
+
+        .course-card-footer {
+            border-color: #2c3950 !important;
+        }
+
+    }
+
+
+    // DIVIDERS
+
+    .course-card hr,
+    .home-page hr {
+        background: #2c3950 !important;
+    }
+
+}

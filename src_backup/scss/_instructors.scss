@@ -1,0 +1,319 @@
+
+.instructors-page {
+    background: #f6f8fc;
+    min-height: 70vh;
+    padding-bottom: 60px;
+}
+
+
+// HERO
+
+.instructors-hero {
+    padding: 60px 20px;
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #eaf1ff,
+        #f5f8ff
+    );
+
+    h1 {
+        color: #101828;
+        font-size: clamp(28px, 4vw, 44px);
+        font-weight: 800;
+        margin: 16px 0;
+    }
+
+    p {
+        color: #667085;
+        font-size: 16px;
+    }
+}
+
+.instructors-label {
+    color: var(--app-primary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+
+// TOOLBAR
+
+.instructors-content {
+    padding-top: 35px;
+}
+
+.instructors-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+#instructorCount {
+    color: #344054;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.instructor-filters {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.instructor-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: #ffffff;
+    border: 1px solid #e4e7ec;
+    border-radius: 10px;
+
+    > i,
+    > svg {
+        color: #98a2b3;
+    }
+
+    input {
+        border: none;
+        outline: none;
+        width: 220px;
+        background: transparent;
+        color: #101828;
+        font-size: 14px;
+    }
+
+    &:focus-within {
+        border-color: var(--app-primary);
+    }
+}
+
+.instructor-sort {
+    padding: 12px;
+    border: 1px solid #e4e7ec;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #344054;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+// INSTRUCTOR GRID
+
+.instructor-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+
+// INSTRUCTOR CARD
+
+.instructor-card {
+    display: flex;
+    flex-direction: column;
+    padding: 26px;
+    background: #ffffff;
+    border: 1px solid #e4e7ec;
+    border-radius: 18px;
+    transition: 250ms ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        border-color: #bfd0ff;
+        box-shadow: 0 12px 30px #1018280d;
+    }
+}
+
+.instructor-card-top {
+    text-align: center;
+
+    h3 {
+        margin: 18px 0 8px;
+        color: #101828;
+        font-size: 20px;
+        font-weight: 750;
+    }
+}
+
+.instructor-avatar {
+    display: grid;
+    place-items: center;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+    border-radius: 50%;
+    font-size: 35px;
+}
+
+
+// AVATAR COLORS
+
+.avatar-blue {
+    background: #eaf0ff;
+    color: #1455ff;
+}
+
+.avatar-purple {
+    background: #f3e8ff;
+    color: #9333ea;
+}
+
+.avatar-green {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.avatar-orange {
+    background: #ffedd5;
+    color: #ea580c;
+}
+
+.avatar-pink {
+    background: #fce7f3;
+    color: #db2777;
+}
+
+.avatar-cyan {
+    background: #cffafe;
+    color: #0891b2;
+}
+
+
+// CATEGORY AND RATING
+
+.instructor-category {
+    color: #667085;
+    font-size: 14px;
+    min-height: 22px;
+}
+
+.instructor-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 15px 0;
+
+    i,
+    svg {
+        color: #f59e0b;
+    }
+
+    strong {
+        color: #101828;
+        font-size: 15px;
+    }
+}
+
+
+// STATISTICS
+
+.instructor-stats {
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 20px 0;
+    margin-top: auto;
+    border-top: 1px solid #e4e7ec;
+}
+
+.instructor-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    > i,
+    > svg {
+        color: var(--app-primary);
+        font-size: 18px;
+    }
+
+    strong {
+        color: #101828;
+        font-size: 20px;
+        font-weight: 750;
+    }
+
+    span {
+        color: #667085;
+        font-size: 12px;
+    }
+}
+
+
+// VIEW COURSES BUTTON
+
+.instructor-view-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    background: #eef3ff;
+    color: var(--app-primary);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 650;
+    transition: 200ms ease;
+
+    &:hover {
+        background: var(--app-primary);
+        color: #ffffff;
+    }
+}
+
+
+// RESPONSIVE DESIGN
+
+@media (max-width: 1200px) {
+
+    .instructor-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .instructor-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .instructor-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .instructor-filters,
+    .instructor-search,
+    .instructor-sort {
+        width: 100%;
+    }
+
+    .instructor-search input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .instructors-hero {
+        padding: 40px 16px;
+    }
+
+}

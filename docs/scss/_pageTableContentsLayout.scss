@@ -1,0 +1,284 @@
+
+.app-page .app-title,
+.app-main-content .app-title {
+
+    color: var(--app-text);
+
+    font-size: clamp(1.75rem, 3.5vw, 2.8rem);
+
+    font-weight: 800;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.04em;
+
+    margin-bottom: 12px;
+
+}
+
+// ==============================
+// 2. Decorative line
+// ==============================
+
+.app-page .app-line,
+.app-main-content .app-line {
+
+    width: 80px;
+
+    height: 4px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+        90deg,
+        var(--app-primary),
+        #42b6ff
+    );
+
+    margin-bottom: 24px;
+
+}
+
+// ==============================
+// 3. Table subtitle
+// ==============================
+
+.app-subtitle {
+
+    color: var(--app-text);
+
+    font-size: clamp(1rem, 2vw, 1.35rem);
+
+    font-weight: 700;
+
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+
+}
+
+// ==============================
+// 4. Table container
+// ==============================
+
+.app-tbl {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin-bottom: 24px;
+
+    padding: 20px;
+
+    background: var(--app-surface);
+
+    border: 1px solid var(--app-border);
+
+    border-radius: var(--app-radius);
+
+    box-shadow: var(--app-shadow);
+
+    overflow-x: auto;
+
+    scrollbar-width: thin;
+
+    scrollbar-color: #cbd5e1 transparent;
+
+}
+
+// ==============================
+// 5. Table
+// ==============================
+
+.app-tbl .table {
+
+    width: 100%;
+
+    min-width: 600px;
+
+    margin-bottom: 0;
+
+    background: var(--app-surface);
+
+    color: var(--app-text);
+
+    font-size: 14px;
+
+    border-collapse: collapse;
+
+    --bulma-table-cell-border-color:
+        var(--app-border);
+
+    --bulma-table-striped-row-even-background-color:
+        #f8faff;
+
+    --bulma-table-row-hover-background-color:
+        #edf3ff;
+
+    --bulma-table-striped-row-even-hover-background-color:
+        #edf3ff;
+
+    // Table header
+
+    thead th {
+
+        padding: 15px 16px;
+
+        background: var(--sz-bg-edf3ff, #edf3ff);
+
+        color: var(--sz-link, var(--app-primary));
+
+        font-size: 13px;
+
+        font-weight: 700;
+
+        text-align: left;
+
+        white-space: nowrap;
+
+        border-color: var(--app-border);
+
+    }
+
+    // Table body
+
+    tbody td {
+
+        padding: 14px 16px;
+
+        vertical-align: middle;
+
+        border-color: var(--app-border);
+
+        line-height: 1.6;
+
+    }
+
+    tbody tr {
+
+        transition: background-color var(--transition);
+
+    }
+
+}
+
+// ==============================
+// 6. Course information
+// ==============================
+
+.course-code {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 4px 10px;
+
+    border-radius: 6px;
+
+    background: var(--active-bg);
+
+    color: var(--sz-link, var(--app-primary));
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+.course-price {
+
+    color: var(--sz-link, var(--app-primary));
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+}
+
+.course-rating {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    font-weight: 600;
+
+    .fa-star {
+
+        color: var(--sz-fg-eab308, #eab308);
+
+    }
+
+}
+
+// ==============================
+// 7. Tablet
+// ==============================
+
+@media (width <= 1023px) {
+
+    .app-tbl {
+
+        padding: 16px;
+
+    }
+
+    .app-tbl .table {
+
+        font-size: 13px;
+
+    }
+
+}
+
+// ==============================
+// 8. Mobile
+// ==============================
+
+@media (width <= 768px) {
+
+    .app-page .app-title,
+    .app-main-content .app-title {
+
+        font-size: 1.75rem;
+
+    }
+
+    .app-subtitle {
+
+        font-size: 1rem;
+
+        margin-bottom: 14px;
+
+    }
+
+    .app-tbl {
+
+        padding: 12px;
+
+        border-radius: 12px;
+
+        margin-bottom: 18px;
+
+    }
+
+    .app-tbl .table {
+
+        min-width: 560px;
+
+        font-size: 13px;
+
+        thead th,
+        tbody td {
+
+            padding: 12px;
+
+        }
+
+    }
+
+}

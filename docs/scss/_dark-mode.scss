@@ -1,0 +1,133 @@
+/* SkillZone theme: original component colors retained in light mode. */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --app-primary: #1455ff;
+  --app-primary-dark: #1044da;
+  --app-background: #0b1120;
+  --app-surface: #151e30;
+  --app-text: #f1f5f9;
+  --app-muted: #a0aec0;
+  --app-border: #2c3950;
+  --sidebar-bg: #151e30;
+  --active-bg: #21365a;
+  --hover-bg: #233149;
+  --app-shadow: 0 4px 20px #0003;
+  --app-shadow-lg: 0 12px 40px #0005;
+  --sz-primary: #83aaff;
+  --sz-link: #83aaff;
+  --sz-primary-hover: #a8c5ff;
+  --sz-background: #0b1120;
+  --sz-surface: #151e30;
+  --sz-surface-secondary: #1c293d;
+  --sz-text: #f1f5f9;
+  --sz-muted: #a0aec0;
+  --sz-border: #2c3950;
+  --sz-shadow: 0 8px 30px #0004;
+  --sz-navbar-glass: rgba(21, 30, 48, 0.96);
+  --sz-bg-cffafe: #1d4144;
+  --sz-bg-d1d5db: #0b1120;
+  --sz-bg-dbe4f2: #1e2d45;
+  --sz-bg-dbe7ff: #1e2d45;
+  --sz-bg-dbeafe: #1e2d45;
+  --sz-bg-dce6fa: #1e2d45;
+  --sz-bg-dce7ff: #1e2d45;
+  --sz-bg-dce8ff: #1e2d45;
+  --sz-bg-dcfce7: #1d442a;
+  --sz-bg-dfe9ff: #1e2d45;
+  --sz-bg-e0e7ff: #1e2d45;
+  --sz-bg-e0eaff: #1e2d45;
+  --sz-bg-e4e7ec: #0b1120;
+  --sz-bg-e5edff: #1e2d45;
+  --sz-bg-e8efff: #1e2d45;
+  --sz-bg-e9edf4: #0b1120;
+  --sz-bg-e9eef7: #1e2d45;
+  --sz-bg-eaf0ff: #1e2d45;
+  --sz-bg-eaf1ff: #1e2d45;
+  --sz-bg-ecfdf5: #1d4432;
+  --sz-bg-edf2fa: #1e2d45;
+  --sz-bg-edf3ff: #1e2d45;
+  --sz-bg-eef3ff: #1e2d45;
+  --sz-bg-eef4ff: #1e2d45;
+  --sz-bg-f0f5ff: #1e2d45;
+  --sz-bg-f1f4f9: #1e2d45;
+  --sz-bg-f1f4fa: #1e2d45;
+  --sz-bg-f2f4f7: #0b1120;
+  --sz-bg-f3e8ff: #301d44;
+  --sz-bg-f3f6ff: #1e2d45;
+  --sz-bg-f4f6fa: #1e2d45;
+  --sz-bg-f4fcf8: #1e2d45;
+  --sz-bg-f5f7fc: #0b1120;
+  --sz-bg-f5f8ff: #1e2d45;
+  --sz-bg-f6f8fc: #0b1120;
+  --sz-bg-f8faff: #0b1120;
+  --sz-bg-fce7f3: #441d33;
+  --sz-bg-fcfcfd: #151e30;
+  --sz-bg-fee2e2: #441d1d;
+  --sz-bg-fef2f2: #1e2d45;
+  --sz-bg-fef3c7: #443c1d;
+  --sz-bg-ffe4e6: #441d20;
+  --sz-bg-ffedd5: #44331d;
+  --sz-bg-fff1f2: #1e2d45;
+  --sz-bg-fff7ed: #44331d;
+  --sz-bg-fffbeb: #443c1d;
+  --sz-bg-ffffff: #151e30;
+  --sz-border-b8ccff: #2c3950;
+  --sz-border-b8ceff: #2c3950;
+  --sz-border-bfd0ff: #2c3950;
+  --sz-border-d0d5dd: #2c3950;
+  --sz-border-dce3ec: #2c3950;
+  --sz-border-dce7ff: #2c3950;
+  --sz-border-e4e7ec: #2c3950;
+  --sz-border-edf0f5: #2c3950;
+  --sz-border-edf1f7: #2c3950;
+  --sz-border-eef0f4: #2c3950;
+  --sz-border-eef1f6: #2c3950;
+  --sz-border-f2f4f7: #2c3950;
+  --sz-border-fecaca: #2c3950;
+  --sz-border-fecdd3: #2c3950;
+  --sz-border-ffe4e6: #2c3950;
+  --sz-border-ffffff: #2c3950;
+  --sz-fg-047857: #84f0d1;
+  --sz-fg-059669: #84f0cf;
+  --sz-fg-073bc7: #84a2f0;
+  --sz-fg-0891b2: #84dbf0;
+  --sz-fg-101828: #84a8f0;
+  --sz-fg-1036a6: #84a0f0;
+  --sz-fg-1455ff: #84a2f0;
+  --sz-fg-16a34a: #84f0ac;
+  --sz-fg-172033: #f1f5f9;
+  --sz-fg-344054: #f1f5f9;
+  --sz-fg-3456a0: #84a6f0;
+  --sz-fg-475467: #a0aec0;
+  --sz-fg-4f46e5: #8b84f0;
+  --sz-fg-667085: #a0aec0;
+  --sz-fg-92400e: #f0ad84;
+  --sz-fg-9333ea: #bd84f0;
+  --sz-fg-98a2b3: #a0aec0;
+  --sz-fg-b91c1c: #f08484;
+  --sz-fg-be123c: #f0849f;
+  --sz-fg-c8a65a: #f0cf84;
+  --sz-fg-d97706: #f0be84;
+  --sz-fg-db2777: #f084b4;
+  --sz-fg-dc2626: #f08484;
+  --sz-fg-e11d48: #f0849c;
+  --sz-fg-ea580c: #f0a984;
+  --sz-fg-eab308: #f0d684;
+  --sz-fg-ef4444: #f08484;
+  --sz-fg-f59e0b: #f0c884;
+  --sz-fg-fbbf24: #f0d284;
+}
+
+html[data-theme="dark"] body { background: var(--app-background); color: var(--app-text); }
+html[data-theme="dark"] a:not([class]) { color: #83aaff; }
+html[data-theme="dark"] .home-hero { background: linear-gradient(120deg,#101827,#172554); }
+html[data-theme="dark"] .home-visual-circle { background: #263e75; }
+html[data-theme="dark"] .home-hero-content h1 span { color: #83aaff; }
+html[data-theme="dark"] .home-search input { background: transparent; }
+html[data-theme="dark"] .home-statistics { background: var(--app-surface); }
+html[data-theme="dark"] .home-stat-item { background: transparent; }
+html[data-theme="dark"] .certificate-document { color-scheme: light; background: #fffefa; color: #142b55; }
+html[data-theme="dark"] input:not([type="checkbox"]):not([type="radio"]),
+html[data-theme="dark"] textarea, html[data-theme="dark"] select { color-scheme: dark; }
+html[data-theme="dark"] #navbar .nav-link.is-active { color: #83aaff; }
+html[data-theme="dark"] .theme-toggle { color: #f1f5f9; }

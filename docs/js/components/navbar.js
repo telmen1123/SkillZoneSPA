@@ -1,118 +1,149 @@
-
 import {
     t,
     getLanguage,
     setLanguage
 } from "../i18n/i18n.js";
 
-const menus = [
-    {
-        key: "nav.home",
-        path: "#/",
-        icon: "fa-house"
-    },
-    {
-        key: "nav.courses",
-        path: "#/courses",
-        icon: "fa-book-open"
-    },
-    {
-        key: "nav.instructors",
-        path: "#/instructors",
-        icon: "fa-chalkboard-user"
-    },
-    {
-        key: "nav.blog",
-        path: "#/blog",
-        icon: "fa-newspaper"
-    }
-];
+import {
+    getCartCount
+} from "../services/cartService.js";
 
-// Navbar үүсгэх
+import {
+    getWishlistCount
+} from "../services/wishlistService.js";
+
+import {
+    getUnreadCount
+} from "../services/notificationService.js";
+
+import {
+    renderNavbarAuth
+} from "./navbarAuth.js";
+
+
 export function renderNavbar() {
 
     const language = getLanguage();
 
-    const currentPath =
-        (window.location.hash || "#/").split("?")[0];
+    const cartCount = getCartCount();
 
-    const menuHTML = menus.map((menu) => `
-        <a href="${menu.path}"
-           class="nav-link
-           ${currentPath === menu.path ? "is-active" : ""}">
+    const wishlistCount = getWishlistCount();
 
-            <i class="fa-solid ${menu.icon}"></i>
+    const notificationCount = getUnreadCount();
 
-            <span>${t(menu.key)}</span>
+    const menus = [
 
-        </a>
-    `).join("");
+        {
+            title: t("nav.home"),
+            path: "#/",
+            icon: "fa-house"
+        },
+
+        {
+            title: t("nav.courses"),
+            path: "#/courses",
+            icon: "fa-book-open"
+        },
+
+        {
+            title: t("nav.instructors"),
+            path: "#/instructors",
+            icon: "fa-chalkboard-user"
+        },
+
+        {
+            title: t("nav.blog"),
+            path: "#/blog",
+            icon: "fa-newspaper"
+        }
+
+    ];
+
 
     return `
-        <nav class="skill-navbar">
 
-            <div class="app-container nav-container">
+        <nav class="app-navbar">
 
-                <!-- Logo -->
-                <a href="#/" class="brand-logo">
+            <div class="app-container navbar-container">
 
-                    <span class="brand-icon">
+                <a href="#/" class="navbar-brand">
+
+                    <span class="brand-logo">
+
                         <i class="fa-solid fa-play"></i>
+
                     </span>
 
-                    <span>SkillZone</span>
+                    <span class="brand-name">
+                        SkillZone
+                    </span>
 
                 </a>
 
-                <!-- Mobile menu -->
+
                 <button
-                    class="mobile-toggle"
-                    id="mobileToggle"
                     type="button"
-                    aria-label="${language === "mn" ? "Цэс" : "Menu"}"
-                    aria-controls="navContent"
-                    aria-expanded="false">
+                    id="mobileToggle"
+                    class="mobile-toggle"
+                    aria-label="Menu"
+                    aria-expanded="false"
+                    aria-controls="navContent">
 
                     <i class="fa-solid fa-bars"></i>
 
                 </button>
 
-                <div class="nav-content" id="navContent">
 
-                    <!-- Navigation -->
-                    <div class="nav-links">
-                        ${menuHTML}
+                <div id="navContent" class="navbar-content">
+
+                    <div class="navbar-menu-links">
+
+                        ${menus.map(menu => `
+
+                            <a
+                                href="${menu.path}"
+                                class="nav-link">
+
+                                <i class="fa-solid ${menu.icon}"></i>
+
+                                <span>${menu.title}</span>
+
+                            </a>
+
+                        `).join("")}
+
                     </div>
 
-                    <!-- Search -->
-                    <form class="nav-search"
-                          id="navSearch">
 
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                    <form
+                        id="navSearch"
+                        class="navbar-search">
 
                         <input
                             type="search"
                             id="searchInput"
-                            aria-label="${t("common.search")}"
-                            placeholder="${t("nav.search")}"
-                            autocomplete="off">
+                            placeholder="${t("nav.search")}">
+
+                        <button
+                            type="submit"
+                            aria-label="${t("nav.search")}">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                        </button>
 
                     </form>
 
-                    <!-- Actions -->
-                    <div class="nav-actions">
 
-                        <!-- Language -->
-                        <div class="language-switch"
-                             role="group"
-                             aria-label="${t("common.language")}">
+                    <div class="navbar-actions">
+
+                        <div class="language-switcher">
 
                             <button
                                 type="button"
-                                class="lang-button
-                                ${language === "mn" ? "is-active" : ""}"
                                 data-lang="mn"
-                                aria-pressed="${language === "mn"}">
+                                class="language-button
+                                    ${language === "mn" ? "is-active" : ""}">
 
                                 MN
 
@@ -120,10 +151,9 @@ export function renderNavbar() {
 
                             <button
                                 type="button"
-                                class="lang-button
-                                ${language === "en" ? "is-active" : ""}"
                                 data-lang="en"
-                                aria-pressed="${language === "en"}">
+                                class="language-button
+                                    ${language === "en" ? "is-active" : ""}">
 
                                 EN
 
@@ -131,45 +161,72 @@ export function renderNavbar() {
 
                         </div>
 
-                        <!-- Wishlist -->
-                        <a href="#/wishlist"
-                           class="nav-icon-button"
-                           title="${t("nav.wishlist")}"
-                           aria-label="${t("nav.wishlist")}">
+
+                        <a
+                            href="#/wishlist"
+                            class="nav-icon-button"
+                            title="${t("nav.wishlist")}"
+                            aria-label="${t("nav.wishlist")}">
 
                             <i class="fa-regular fa-heart"></i>
 
+                            <span
+                                id="wishlistCount"
+                                class="nav-count"
+                                data-wishlist-count
+                                ${wishlistCount === 0 ? "hidden" : ""}>
+
+                                ${wishlistCount}
+
+                            </span>
+
                         </a>
 
-                        <!-- Cart -->
-                        <a href="#/cart"
-                           class="nav-icon-button"
-                           title="${t("nav.cart")}"
-                           aria-label="${t("nav.cart")}">
+
+                        <a
+                            href="#/cart"
+                            class="nav-icon-button"
+                            title="${t("nav.cart")}"
+                            aria-label="${t("nav.cart")}">
 
                             <i class="fa-solid fa-cart-shopping"></i>
 
+                            <span
+                                id="cartCount"
+                                class="nav-count"
+                                data-cart-count
+                                ${cartCount === 0 ? "hidden" : ""}>
+
+                                ${cartCount}
+
+                            </span>
+
                         </a>
 
-                        <!-- Notifications -->
-                        <a href="#/notifications"
-                           class="nav-icon-button"
-                           title="${t("nav.notifications")}"
-                           aria-label="${t("nav.notifications")}">
+
+                        <a
+                            href="#/notifications"
+                            class="nav-icon-button"
+                            title="${t("nav.notifications")}"
+                            aria-label="${t("nav.notifications")}">
 
                             <i class="fa-regular fa-bell"></i>
 
+                            <span
+                                id="notificationCount"
+                                data-notification-count
+                                ${notificationCount === 0 ? "hidden" : ""}>
+
+                                ${notificationCount > 99
+                                    ? "99+"
+                                    : notificationCount}
+
+                            </span>
+
                         </a>
 
-                        <!-- Login -->
-                        <a href="#/login"
-                           class="login-button">
 
-                            <i class="fa-regular fa-user"></i>
-
-                            <span>${t("nav.login")}</span>
-
-                        </a>
+                        ${renderNavbarAuth()}
 
                     </div>
 
@@ -178,111 +235,163 @@ export function renderNavbar() {
             </div>
 
         </nav>
+
     `;
+
 }
 
-// Идэвхтэй цэс тодруулах
-function updateActiveMenu() {
 
-    const currentPath =
-        (window.location.hash || "#/").split("?")[0];
+// ACTIVE MENU
 
-    document.querySelectorAll(".nav-link")
-        .forEach((link) => {
+export function updateActiveMenu() {
 
-            const isActive =
-                link.getAttribute("href") === currentPath;
+    const currentHash = (
+        window.location.hash || "#/"
+    ).split("?")[0];
 
-            link.classList.toggle(
-                "is-active",
-                isActive
+
+    document.querySelectorAll(
+
+        ".nav-link, .nav-icon-button, .login-button, .navbar-profile-link"
+
+    ).forEach(link => {
+
+        const href = link.getAttribute("href");
+
+        const active = href === currentHash;
+
+        link.classList.toggle(
+            "is-active",
+            active
+        );
+
+        if (active) {
+
+            link.setAttribute(
+                "aria-current",
+                "page"
             );
 
-            if (isActive) {
+        } else {
 
-                link.setAttribute(
-                    "aria-current",
-                    "page"
-                );
+            link.removeAttribute("aria-current");
 
-            } else {
+        }
 
-                link.removeAttribute("aria-current");
+    });
+
+
+    const mobileToggle = document.getElementById(
+        "mobileToggle"
+    );
+
+    const navContent = document.getElementById(
+        "navContent"
+    );
+
+    navContent?.classList.remove("is-active");
+
+    mobileToggle?.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+}
+
+
+// BIND NAVBAR EVENTS
+
+export function bindNavbarEvents() {
+
+    const mobileToggle = document.getElementById(
+        "mobileToggle"
+    );
+
+    const navContent = document.getElementById(
+        "navContent"
+    );
+
+
+    // MOBILE MENU
+
+    mobileToggle?.addEventListener("click", () => {
+
+        if (!navContent) return;
+
+        const active = navContent.classList.toggle(
+            "is-active"
+        );
+
+        mobileToggle.setAttribute(
+            "aria-expanded",
+            String(active)
+        );
+
+    });
+
+
+    // SEARCH
+
+    const searchForm = document.getElementById(
+        "navSearch"
+    );
+
+    const searchInput = document.getElementById(
+        "searchInput"
+    );
+
+
+    searchForm?.addEventListener("submit", event => {
+
+        event.preventDefault();
+
+        const query = searchInput?.value.trim() ?? "";
+
+        window.location.hash = query
+
+            ? `/courses?q=${encodeURIComponent(query)}`
+
+            : "/courses";
+
+        updateActiveMenu();
+
+    });
+
+
+    // LANGUAGE
+
+    document.querySelectorAll(
+        "[data-lang]"
+    ).forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const language = button.dataset.lang;
+
+            if (language !== getLanguage()) {
+
+                setLanguage(language);
 
             }
 
         });
 
-    document.querySelector("#navContent")
-        ?.classList.remove("is-open");
-
-    document.querySelector("#mobileToggle")
-        ?.setAttribute("aria-expanded", "false");
-
-}
-
-// Navbar event холбох
-export function bindNavbarEvents() {
-
-    const mobileToggle =
-        document.querySelector("#mobileToggle");
-
-    const navContent =
-        document.querySelector("#navContent");
-
-    const searchForm =
-        document.querySelector("#navSearch");
-
-    // Mobile menu
-    mobileToggle?.addEventListener("click", () => {
-
-        const isOpen =
-            navContent.classList.toggle("is-open");
-
-        mobileToggle.setAttribute(
-            "aria-expanded",
-            String(isOpen)
-        );
-
     });
 
-    // Сургалт хайх
-    searchForm?.addEventListener("submit", (event) => {
 
-        event.preventDefault();
+    // ROUTE CHANGE
 
-        const query = document
-            .querySelector("#searchInput")
-            .value.trim();
-
-        if (!query) return;
-
-        const params = new URLSearchParams({
-            q: query
-        });
-
-        window.location.hash =
-            `/courses?${params.toString()}`;
-
-    });
-
-    document.querySelectorAll(".lang-button")
-        .forEach((button) => {
-
-            button.addEventListener("click", () => {
-
-                const language = button.dataset.lang;
-
-                setLanguage(language);
-
-            });
-
-        });
+    window.removeEventListener(
+        "hashchange",
+        updateActiveMenu
+    );
 
     window.addEventListener(
         "hashchange",
         updateActiveMenu
     );
 
+
     updateActiveMenu();
+
 }

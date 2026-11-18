@@ -1,0 +1,205 @@
+
+
+:root {
+
+    --bulma-primary-h: 223deg;
+    --bulma-primary-s: 100%;
+    --bulma-primary-l: 54%;
+
+}
+
+
+.button {
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    min-height: 42px;
+
+    transition:
+        background-color var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        transform var(--transition);
+
+    &:active:not(:disabled) {
+
+        transform: scale(0.98);
+
+    }
+
+    &:disabled {
+
+        opacity: 0.55;
+
+        cursor: not-allowed;
+
+    }
+
+}
+
+// Primary button
+
+.button.is-primary {
+
+    background-color: var(--app-primary);
+
+    border-color: var(--app-primary);
+
+    color: #ffffff;
+
+    &:hover:not(:disabled) {
+
+        background-color: var(--app-primary-dark);
+
+        border-color: var(--app-primary-dark);
+
+        color: #ffffff;
+
+    }
+
+}
+
+// Secondary button
+
+.button.is-secondary {
+
+    background-color: var(--app-secondary);
+
+    border-color: var(--app-secondary);
+
+    color: var(--sz-fg-101828, #101828);
+
+    &:hover:not(:disabled) {
+
+        background-color: var(--app-secondary-dark);
+
+        border-color: var(--app-secondary-dark);
+
+        color: var(--sz-fg-101828, #101828);
+
+    }
+
+}
+
+// Light button
+
+.button.is-light {
+
+    background-color: var(--sz-bg-f1f4fa, #f1f4fa);
+
+    border-color: var(--app-border);
+
+    color: var(--app-text);
+
+    &:hover:not(:disabled) {
+
+        background-color: var(--active-bg);
+
+        color: var(--sz-link, var(--app-primary));
+
+    }
+
+}
+
+// Outlined button
+
+.button.is-primary.is-outlined {
+
+    background-color: transparent;
+
+    border: 1px solid var(--app-primary);
+
+    color: var(--sz-link, var(--app-primary));
+
+    &:hover:not(:disabled) {
+
+        background-color: var(--app-primary);
+
+        color: #ffffff;
+
+    }
+
+}
+
+// Sidebar button
+
+.app-sidebar-icon-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-width: 44px;
+
+    min-height: 44px;
+
+    padding: 10px 14px;
+
+    border: 1px solid var(--app-border);
+
+    border-radius: 10px;
+
+    background: var(--app-surface);
+
+    color: var(--app-text);
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+
+    &:hover {
+
+        background: var(--active-bg);
+
+        color: var(--sz-link, var(--app-primary));
+
+    }
+
+}
+
+// Icon button
+
+.app-icon-button {
+
+    display: inline-grid;
+
+    place-items: center;
+
+    width: 44px;
+
+    height: 44px;
+
+    border: 1px solid var(--app-border);
+
+    border-radius: 10px;
+
+    background: var(--app-surface);
+
+    color: var(--app-muted);
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+
+    &:hover,
+    &.is-active {
+
+        background: var(--active-bg);
+
+        color: var(--sz-link, var(--app-primary));
+
+    }
+
+}

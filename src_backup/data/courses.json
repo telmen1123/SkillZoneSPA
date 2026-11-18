@@ -1,0 +1,233 @@
+
+[
+    {
+        "id": "SZ001",
+        "title": {
+            "mn": "Python програмчлалын анхан шат",
+            "en": "Python Programming for Beginners"
+        },
+        "description": {
+            "mn": "Python хэлний үндсэн ойлголтуудыг практик жишээгээр суралцаарай.",
+            "en": "Learn Python fundamentals through practical examples."
+        },
+        "category": "programming",
+        "instructor": "Б. Бат-Эрдэнэ",
+        "price": 79000,
+        "originalPrice": 129000,
+        "rating": 4.9,
+        "students": 1240,
+        "lessons": 48,
+        "duration": 24,
+        "level": "beginner",
+        "image": "./img/courses/python.jpg",
+        "featured": true,
+        "createdAt": "2026-10-01"
+    },
+    {
+        "id": "SZ002",
+        "title": {
+            "mn": "React JS бүрэн сургалт",
+            "en": "Complete React JS Course"
+        },
+        "description": {
+            "mn": "React ашиглан орчин үеийн веб аппликейшн хөгжүүлж сурна.",
+            "en": "Build modern web applications using React."
+        },
+        "category": "programming",
+        "instructor": "Д. Тэмүүлэн",
+        "price": 99000,
+        "originalPrice": 159000,
+        "rating": 4.8,
+        "students": 986,
+        "lessons": 64,
+        "duration": 32,
+        "level": "intermediate",
+        "image": "./img/courses/react.jpg",
+        "featured": true,
+        "createdAt": "2026-10-05"
+    },
+    {
+        "id": "SZ003",
+        "title": {
+            "mn": "UI/UX дизайн ба Figma",
+            "en": "UI/UX Design with Figma"
+        },
+        "description": {
+            "mn": "Хэрэглэгчийн интерфейс болон туршлагын дизайн бүтээж сурна.",
+            "en": "Learn user interface and user experience design."
+        },
+        "category": "design",
+        "instructor": "А. Номин",
+        "price": 89000,
+        "originalPrice": 139000,
+        "rating": 4.9,
+        "students": 850,
+        "lessons": 42,
+        "duration": 18,
+        "level": "beginner",
+        "image": "./img/courses/figma.jpg",
+        "featured": true,
+        "createdAt": "2026-10-08"
+    },
+    {
+        "id": "SZ004",
+        "title": {
+            "mn": "Хиймэл оюун ухаан ба ChatGPT",
+            "en": "Artificial Intelligence and ChatGPT"
+        },
+        "description": {
+            "mn": "Хиймэл оюун ухааны хэрэгслүүдийг үр бүтээлтэй ашиглаж сурна.",
+            "en": "Learn to use artificial intelligence tools effectively."
+        },
+        "category": "ai",
+        "instructor": "Г. Ананд",
+        "price": 69000,
+        "originalPrice": 119000,
+        "rating": 4.8,
+        "students": 1620,
+        "lessons": 32,
+        "duration": 16,
+        "level": "beginner",
+        "image": "./img/courses/ai.jpg",
+        "featured": true,
+        "createdAt": "2026-11-01"
+    },
+    {
+        "id": "SZ005",
+        "title": {
+            "mn": "Full Stack веб хөгжүүлэлт",
+            "en": "Full Stack Web Development"
+        },
+        "description": {
+            "mn": "Frontend болон Backend хөгжүүлэлтийг цогцоор нь суралцана.",
+            "en": "Master both frontend and backend development."
+        },
+        "category": "programming",
+        "instructor": "Б. Бат-Эрдэнэ",
+        "price": 199000,
+        "originalPrice": 299000,
+        "rating": 4.9,
+        "students": 720,
+        "lessons": 120,
+        "duration": 60,
+        "level": "advanced",
+        "image": "./img/courses/fullstack.jpg",
+        "featured": true,
+        "createdAt": "2026-11-05"
+    },
+    {
+        "id": "SZ006",
+        "title": {
+            "mn": "Дижитал маркетинг",
+            "en": "Digital Marketing"
+        },
+        "description": {
+            "mn": "Сошиал медиа болон онлайн маркетингийн стратеги эзэмшинэ.",
+            "en": "Master social media and online marketing strategies."
+        },
+        "category": "marketing",
+        "instructor": "С. Мөнхжин",
+        "price": 59000,
+        "originalPrice": 99000,
+        "rating": 4.7,
+        "students": 635,
+        "lessons": 36,
+        "duration": 20,
+        "level": "beginner",
+        "image": "./img/courses/marketing.jpg",
+        "featured": false,
+        "createdAt": "2026-10-12"
+    },
+    {
+        "id": "SZ007",
+        "title": {
+            "mn": "Бизнес ба санхүүгийн үндэс",
+            "en": "Business and Finance Fundamentals"
+        },
+        "description": {
+            "mn": "Бизнес төлөвлөлт болон санхүүгийн мэдлэг эзэмшинэ.",
+            "en": "Learn business planning and financial fundamentals."
+        },
+        "category": "business",
+        "instructor": "О. Энхтөр",
+        "price": 79000,
+        "originalPrice": 119000,
+        "rating": 4.6,
+        "students": 420,
+        "lessons": 40,
+        "duration": 22,
+        "level": "beginner",
+        "image": "./img/courses/business.jpg",
+        "featured": false,
+        "createdAt": "2026-10-15"
+    },
+    {
+        "id": "SZ008",
+        "title": {
+            "mn": "Англи хэлний ярианы чадвар",
+            "en": "English Speaking Skills"
+        },
+        "description": {
+            "mn": "Өдөр тутмын англи хэлний харилцааны чадвараа хөгжүүлнэ.",
+            "en": "Improve your everyday English communication skills."
+        },
+        "category": "language",
+        "instructor": "М. Саруул",
+        "price": 49000,
+        "originalPrice": 89000,
+        "rating": 4.8,
+        "students": 1105,
+        "lessons": 52,
+        "duration": 26,
+        "level": "beginner",
+        "image": "./img/courses/english.jpg",
+        "featured": false,
+        "createdAt": "2026-10-20"
+    },
+    {
+        "id": "SZ009",
+        "title": {
+            "mn": "Гэрэл зураг ба видео бүтээл",
+            "en": "Photography and Video Production"
+        },
+        "description": {
+            "mn": "Гэрэл зураг авах болон видео боловсруулах арга техникт суралцана.",
+            "en": "Learn photography and video production techniques."
+        },
+        "category": "photography",
+        "instructor": "Т. Билгүүн",
+        "price": 69000,
+        "originalPrice": 109000,
+        "rating": 4.7,
+        "students": 380,
+        "lessons": 38,
+        "duration": 19,
+        "level": "intermediate",
+        "image": "./img/courses/photography.jpg",
+        "featured": false,
+        "createdAt": "2026-10-25"
+    },
+    {
+        "id": "SZ010",
+        "title": {
+            "mn": "Цагийн менежмент ба бүтээмж",
+            "en": "Time Management and Productivity"
+        },
+        "description": {
+            "mn": "Цагаа зөв төлөвлөж, хувийн бүтээмжээ нэмэгдүүлнэ.",
+            "en": "Manage your time and improve personal productivity."
+        },
+        "category": "personal",
+        "instructor": "Э. Хулан",
+        "price": 29000,
+        "originalPrice": 59000,
+        "rating": 4.8,
+        "students": 920,
+        "lessons": 24,
+        "duration": 12,
+        "level": "beginner",
+        "image": "./img/courses/productivity.jpg",
+        "featured": false,
+        "createdAt": "2026-11-10"
+    }
+]

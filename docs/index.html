@@ -1,7 +1,9 @@
-
 <!DOCTYPE html>
+
 <html lang="mn">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -10,9 +12,39 @@
     <meta name="description"
           content="SkillZone - Цахим сургалтын платформ">
 
-    <meta name="theme-color" content="#1455ff">
+    <meta name="keywords"
+          content="SkillZone, online courses, цахим сургалт, Python, React, AI, UI/UX">
+
+    <meta name="theme-color"
+          content="#1455ff">
 
     <title>SkillZone | Цахим сургалтын платформ</title>
+
+    <script>
+
+        try {
+
+            const theme =
+                localStorage.getItem("skillzone-theme") === "dark"
+
+                    ? "dark"
+
+                    : "light";
+
+            document.documentElement.setAttribute(
+                "data-theme",
+                theme
+            );
+
+            document.documentElement.style.colorScheme = theme;
+
+        } catch (error) {
+
+            console.warn("Theme error:", error);
+
+        }
+
+    </script>
 
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
@@ -21,23 +53,32 @@
           href="https://fonts.gstatic.com"
           crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 
-    <link rel="stylesheet" href="./css/main.css">
 
-    <script src="./js/fontawesomeall.min.js" defer></script>
+    <link rel="stylesheet"
+          href="./css/main.css">
+
+    <script defer
+            src="./js/fontawesomeall.min.js">
+    </script>
+
 </head>
 
 <body>
 
+    <!-- NAVBAR -->
     <header id="navbar"></header>
-
+    <!-- MAIN CONTENT -->
     <main id="app"></main>
 
     <footer id="footer"></footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js">
+    </script>
 
-    <script type="module" src="./js/app.js"></script>
-
+    <script type="module"
+            src="./js/app.js">
+    </script>
 </body>
 </html>

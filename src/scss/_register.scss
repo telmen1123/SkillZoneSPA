@@ -1,0 +1,48 @@
+
+.auth-hint {
+    color: var(--sz-fg-667085, #667085);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.auth-agreement {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    input {
+        width: 17px;
+        height: 17px;
+        margin-top: 3px;
+        flex-shrink: 0;
+        accent-color: var(--app-primary);
+        cursor: pointer;
+    }
+
+    label {
+        color: var(--sz-fg-667085, #667085);
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    a {
+        color: var(--sz-link, var(--app-primary));
+        font-weight: 600;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+#registerForm {
+    gap: 17px;
+}
+
+@media (max-width: 480px) {
+
+    .auth-agreement label {
+        font-size: 12px;
+    }
+
+}

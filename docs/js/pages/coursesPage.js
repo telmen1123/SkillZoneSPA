@@ -4,188 +4,314 @@ import {
 } from "../services/courseService.js";
 
 import {
-    t,
-    getLanguage,
-    getLocalizedValue,
-    formatPrice,
-    formatNumber
+    loadImages
+} from "../services/imageService.js";
+
+import {
+    renderCourseToolbar
+} from "../components/courseGrid.js";
+
+import {
+    buildCourseGroups,
+    renderCourseGroupList
+} from "../components/searchCourseGroupListSidebar.js";
+
+import {
+    initCourseData,
+    bindSearchEvents,
+    renderDefaultTables
+} from "../fn/courseSearchEvents.js";
+
+import {
+    renderSidebarPageLayout
+} from "../layouts/sidebarPageLayout.js";
+
+import {
+    renderPageLayout
+} from "../layouts/pageLayout.js";
+
+import {
+    renderNotification
+} from "../layouts/notificationLayout.js";
+
+import {
+    bindSidebar,
+    bindMenuListToggle
+} from "../fn/sidebarEvents.js";
+
+import {
+    renderSearchCourseName
+} from "../components/searchCourseNameSidebar.js";
+
+import {
+    renderSearchSettings,
+    renderCourseInfoSettings
+} from "../components/searchSettingsSidebar.js";
+
+import {
+    renderImageModal,
+    bindImageModalEvents
+} from "../components/imageModal.js";
+
+import {
+    bindCartEvents
+} from "../fn/cartEvents.js";
+
+import {
+    bindWishlistEvents
+} from "../fn/wishlistEvents.js";
+
+import {
+    t
 } from "../i18n/i18n.js";
 
-// Сургалтын үндсэн хуудас
+
+// Анхны хуудас
+
 export function renderCoursesPage() {
 
-    return `
-        <section class="section">
+    return renderPageLayout({
 
-            <div class="app-container">
+        pageId: "courses",
 
-                <h1 class="title is-2">
-                    ${t("courses.title")}
-                </h1>
+        pageTitle: t("courses.title"),
 
-                <div id="coursesResult"
-                     class="app-card">
+        content: renderNotification(
 
-                    <p class="has-text-centered">
+            t("common.loading"),
 
-                        <i class="fa-solid
-                                  fa-spinner
-                                  fa-spin"></i>
+            "loading"
 
-                        ${t("common.loading")}
+        )
 
-                    </p>
+    });
 
-                </div>
-
-            </div>
-
-        </section>
-    `;
 }
 
-// Өгөгдөл уншиж харуулах
-export async function bindCoursesPage() {
 
-    const result =
-        document.querySelector("#coursesResult");
+// Үндсэн сургалтын хуудас
 
-    if (!result) return;
+export async function bindCoursesPage(params) {
+
+    const app = document.getElementById("app");
+
+    if (!app) return;
+
+    const currentHash = window.location.hash;
+
+    let pageNode = app.firstElementChild;
+
 
     try {
 
-        const courses = await getCourses();
+        // Өгөгдөл болон зураг ачаалах
 
-        // Хуудас солигдсон эсэхийг шалгах
-        if (!result.isConnected) return;
+        const [courseData] = await Promise.all([
 
-        const language = getLanguage();
+            getCourses(),
 
-        const heading = language === "mn"
-            ? "Нийт сургалт"
-            : "Total courses";
+            loadImages().catch(error => {
 
-        if (courses.length === 0) {
+                console.warn(
 
-            result.textContent =
-                t("courses.noResults");
+                    "Failed to load images:",
 
-            return;
-        }
+                    error
 
-        const list = document.createElement("div");
+                );
 
-        list.className = "columns is-multiline";
+            })
 
-        courses.forEach(course => {
+        ]);
 
-            const column =
-                document.createElement("div");
 
-            column.className =
-                "column is-half-tablet is-one-third-desktop";
+        if (
 
-            const card =
-                document.createElement("article");
+            window.location.hash !== currentHash ||
 
-            card.className =
-                "app-card is-flex is-flex-direction-column";
+            app.firstElementChild !== pageNode
 
-            card.style.height = "100%";
+        ) return;
 
-            const code =
-                document.createElement("span");
 
-            code.className =
-                "tag is-primary is-light mb-3";
+        // Өгөгдөл бэлтгэх
 
-            code.textContent = course.id;
+        initCourseData(courseData);
 
-            const title =
-                document.createElement("h2");
 
-            title.className = "title is-5 mb-3";
+        const groupedCourses = buildCourseGroups(
 
-            title.textContent =
-                getLocalizedValue(course.title);
+            courseData
 
-            const category =
-                document.createElement("p");
+        );
 
-            category.className = "mb-2";
 
-            category.textContent =
-                t(`categories.${course.category}`);
+        // Хуудасны бүтэц
 
-            const instructor =
-                document.createElement("p");
+        app.innerHTML = renderSidebarPageLayout({
 
-            instructor.className = "mb-2";
+            pageId: "courses",
 
-            instructor.textContent =
-                `${t("courses.instructor")}: ${course.instructor}`;
+            pageTitle: t("courses.title"),
 
-            const rating =
-                document.createElement("p");
 
-            rating.className = "mb-2";
+            sidebarContent: `
 
-            rating.textContent =
-                `⭐ ${course.rating} (${formatNumber(course.students)})`;
+                ${renderSearchCourseName()}
 
-            const price =
-                document.createElement("p");
+                ${renderSearchSettings()}
 
-            price.className =
-                "has-text-primary has-text-weight-bold mt-auto";
+                ${renderCourseGroupList(groupedCourses)}
 
-            price.textContent =
-                formatPrice(course.price);
+                ${renderCourseInfoSettings()}
 
-            card.append(
-                code,
-                title,
-                category,
-                instructor,
-                rating,
-                price
-            );
+            `,
 
-            column.append(card);
 
-            list.append(column);
+            mainContent: `
+
+                <section class="course-catalog">
+
+                    <div id="courseToolbar">
+
+                        ${renderCourseToolbar(
+                            courseData.length
+                        )}
+
+                    </div>
+
+
+                    <div id="resultTbl">
+
+                        ${renderDefaultTables(
+                            courseData
+                        )}
+
+                    </div>
+
+                </section>
+
+            `
 
         });
 
-        const total = document.createElement("p");
 
-        total.className =
-            "has-text-weight-semibold mb-5";
+        pageNode = app.firstElementChild;
 
-        total.textContent =
-            `${heading}: ${formatNumber(courses.length)}`;
 
-        result.replaceChildren(total, list);
+        // Image Modal
+
+        document.getElementById("imageModal")
+            ?.remove();
+
+
+        document.documentElement.classList.remove(
+
+            "is-clipped"
+
+        );
+
+
+        app.insertAdjacentHTML(
+
+            "beforeend",
+
+            renderImageModal()
+
+        );
+
+
+        // Navbar хайлт
+
+        const queryParams =
+
+            params instanceof URLSearchParams
+
+                ? params
+
+                : new URLSearchParams(
+
+                    window.location.hash.split("?")[1]
+
+                    ?? ""
+
+                );
+
+
+        const keyword = queryParams.get("q");
+
+
+        const searchTxt = document.getElementById(
+
+            "searchTxt"
+
+        );
+
+
+        if (keyword && searchTxt) {
+
+            searchTxt.value = keyword;
+
+        }
+
+
+        // Бүх Event холбох
+
+        bindSidebar();
+
+        bindMenuListToggle();
+
+        bindSearchEvents();
+
+        bindImageModalEvents();
+
+        bindCartEvents();
+
+        bindWishlistEvents();
+
+
+        console.info(
+
+            `SkillZone: ${courseData.length} сургалт ачааллаа.`
+
+        );
+
 
     } catch (error) {
 
-        if (!result.isConnected) return;
+        if (
 
-        result.innerHTML = `
-            <div class="notification is-danger is-light">
+            window.location.hash !== currentHash ||
 
-                <i class="fa-solid
-                          fa-triangle-exclamation"></i>
+            app.firstElementChild !== pageNode
 
-                ${t("common.error")}
+        ) return;
 
-            </div>
-        `;
 
         console.error(
+
             "Failed to load courses:",
+
             error
+
         );
+
+
+        app.innerHTML = renderPageLayout({
+
+            pageId: "courses",
+
+            pageTitle: t("courses.title"),
+
+            content: renderNotification(
+
+                t("common.error"),
+
+                "danger"
+
+            )
+
+        });
 
     }
 

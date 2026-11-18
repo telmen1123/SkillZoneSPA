@@ -1,0 +1,378 @@
+.sz-notifications-page {
+    min-height: 85vh;
+    padding: 30px 0 60px;
+    background: var(--sz-bg-f6f8fc, #f6f8fc);
+}
+
+.sz-notifications-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: var(--sz-fg-667085, #667085);
+    font-size: 13px;
+    font-weight: 600;
+
+    &:hover {
+        color: var(--sz-fg-1455ff, #1455ff);
+    }
+}
+
+
+// HERO
+
+.sz-notifications-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 35px;
+    margin-bottom: 25px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        120deg,
+        #1455ff,
+        #477aff
+    );
+
+    color: #ffffff;
+
+    span {
+        color: #bfdbfe;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+
+    h1 {
+        margin: 10px 0;
+        color: #ffffff;
+        font-size: clamp(25px, 4vw, 36px);
+        font-weight: 800;
+    }
+
+    p {
+        color: #dbeafe;
+        font-size: 14px;
+    }
+
+    > i,
+    > svg {
+        color: #ffffff60;
+        font-size: 75px;
+    }
+}
+
+
+// PANEL
+
+.sz-notifications-panel {
+    padding: 25px;
+    background: var(--sz-bg-ffffff, #ffffff);
+    border: 1px solid var(--sz-border-e4e7ec, #e4e7ec);
+    border-radius: 18px;
+}
+
+.sz-notifications-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid var(--sz-border-e4e7ec, #e4e7ec);
+}
+
+
+// TABS
+
+.sz-notifications-tabs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        padding: 10px 16px;
+
+        border: none;
+        border-radius: 9px;
+
+        background: transparent;
+        color: var(--sz-fg-667085, #667085);
+
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover,
+        &.is-active {
+            background: var(--sz-bg-eef3ff, #eef3ff);
+            color: var(--sz-fg-1455ff, #1455ff);
+        }
+
+        span {
+            padding: 2px 7px;
+            border-radius: 20px;
+            background: var(--sz-bg-dbe7ff, #dbe7ff);
+            color: var(--sz-fg-1455ff, #1455ff);
+            font-size: 10px;
+        }
+    }
+}
+
+
+// ACTIONS
+
+.sz-notifications-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    button {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+
+        padding: 9px 12px;
+
+        border: none;
+        border-radius: 8px;
+
+        background: var(--sz-bg-f4f6fa, #f4f6fa);
+        color: var(--sz-fg-475467, #475467);
+
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+            background: var(--sz-bg-eef3ff, #eef3ff);
+            color: var(--sz-fg-1455ff, #1455ff);
+        }
+
+        &#clearNotifications:hover {
+            background: var(--sz-bg-fff1f2, #fff1f2);
+            color: var(--sz-fg-dc2626, #dc2626);
+        }
+    }
+}
+
+
+// NOTIFICATION LIST
+
+#notificationsContent {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sz-notification {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    padding: 20px;
+
+    border: 1px solid var(--sz-border-e4e7ec, #e4e7ec);
+    border-radius: 13px;
+
+    background: var(--sz-bg-ffffff, #ffffff);
+
+    &.is-unread {
+        background: var(--sz-bg-f0f5ff, #f0f5ff);
+        border-color: var(--sz-border-dce7ff, #dce7ff);
+    }
+}
+
+.sz-notification-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 12px;
+
+    background: var(--sz-bg-e0eaff, #e0eaff);
+    color: var(--sz-fg-1455ff, #1455ff);
+
+    font-size: 20px;
+}
+
+.sz-notification-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 8px;
+
+    min-width: 0;
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+
+    overflow-wrap: anywhere;
+
+    h3 {
+        color: var(--sz-fg-101828, #101828);
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    p {
+        color: var(--sz-fg-667085, #667085);
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    small {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--sz-fg-98a2b3, #98a2b3);
+        font-size: 11px;
+    }
+}
+
+.sz-notification-dot {
+    flex-shrink: 0;
+    width: 9px;
+    height: 9px;
+    margin-top: 8px;
+    background: #1455ff;
+    border-radius: 50%;
+}
+
+.sz-notification-delete {
+    padding: 8px;
+    border: none;
+    background: transparent;
+    color: var(--sz-fg-98a2b3, #98a2b3);
+    cursor: pointer;
+
+    &:hover {
+        color: var(--sz-fg-dc2626, #dc2626);
+    }
+}
+
+
+// EMPTY STATE
+
+.sz-notification-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    padding: 70px 20px;
+    text-align: center;
+
+    i,
+    svg {
+        color: #bdceff;
+        font-size: 55px;
+    }
+
+    h3 {
+        color: var(--sz-fg-344054, #344054);
+        font-size: 19px;
+        font-weight: 700;
+    }
+
+    p {
+        color: var(--sz-fg-98a2b3, #98a2b3);
+        font-size: 13px;
+    }
+}
+
+
+// NAVBAR COUNTER
+
+#notificationCount,
+[data-notification-count] {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+
+    display: grid;
+    place-items: center;
+
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+
+    border: 2px solid var(--sz-border-ffffff, #ffffff);
+    border-radius: 20px;
+
+    background: #ef4444;
+    color: #ffffff;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    &[hidden] {
+        display: none !important;
+    }
+}
+
+.nav-icon-button {
+    position: relative;
+}
+
+
+// RESPONSIVE
+
+@media (max-width: 768px) {
+
+    .sz-notifications-hero {
+        padding: 25px;
+
+        > i,
+        > svg {
+            display: none;
+        }
+    }
+
+    .sz-notifications-panel {
+        padding: 15px;
+    }
+
+    .sz-notification {
+        gap: 10px;
+        padding: 13px;
+    }
+
+    .sz-notification-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .sz-notification-body {
+
+        h3 {
+            font-size: 13px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+}

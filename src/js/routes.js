@@ -1,37 +1,130 @@
-
 import {
     t,
     getLocalizedValue
 } from "./i18n/i18n.js";
 
 import {
+    renderHomePage,
+    bindHomePage
+} from "./pages/homePage.js";
+
+import {
     renderCoursesPage,
     bindCoursesPage
 } from "./pages/coursesPage.js";
 
-// Дахин ашиглагдах хуудасны загвар
+import {
+    renderCourseDetailsPage,
+    bindCourseDetailsPage
+} from "./pages/courseDetailsPage.js";
+
+import {
+    renderInstructorsPage,
+    bindInstructorsPage
+} from "./pages/instructorsPage.js";
+
+import {
+    renderBlogPage,
+    bindBlogPage
+} from "./pages/blogPage.js";
+
+import {
+    renderArticlePage,
+    bindArticlePage
+} from "./pages/articlePage.js";
+
+import {
+    renderCartPage,
+    bindCartPage
+} from "./pages/cartPage.js";
+
+import {
+    renderWishlistPage,
+    bindWishlistPage
+} from "./pages/wishlistPage.js";
+
+import {
+    renderLoginPage,
+    bindLoginPage
+} from "./pages/loginPage.js";
+
+import {
+    renderRegisterPage,
+    bindRegisterPage
+} from "./pages/registerPage.js";
+
+import {
+    renderProfilePage,
+    bindProfilePage
+} from "./pages/profilePage.js";
+
+import {
+    renderCheckoutPage,
+    bindCheckoutPage
+} from "./pages/checkoutPage.js";
+
+import {
+    renderMyLearningPage,
+    bindMyLearningPage
+} from "./pages/myLearningPage.js";
+
+import {
+    renderPlayerPage,
+    bindPlayerPage
+} from "./pages/playerPage.js";
+
+import {
+    renderCertificatePage,
+    bindCertificatePage
+} from "./pages/certificatePage.js";
+
+import {
+    renderCalendarPage,
+    bindCalendarPage
+} from "./pages/calendarPage.js";
+
+import {
+    renderNotificationsPage,
+    bindNotificationsPage
+} from "./pages/notificationsPage.js";
+
+import {
+    renderSettingsPage,
+    bindSettingsPage
+} from "./pages/settingsPage.js";
+
+import {
+    renderOrderHistoryPage,
+    bindOrderHistoryPage
+} from "./pages/orderHistoryPage.js";
+
+
 function createPage(titleKey, icon, description) {
 
     return () => `
+
         <section class="section">
 
             <div class="app-container">
 
                 <div class="app-card has-text-centered">
 
-                    <span class="icon is-large
-                                 has-text-primary mb-4">
+                    <span class="icon is-large has-text-primary mb-4">
 
                         <i class="fa-solid ${icon} fa-3x"></i>
 
                     </span>
 
                     <h1 class="title is-2">
+
                         ${t(titleKey)}
+
                     </h1>
 
                     <p class="subtitle is-5">
+
                         ${getLocalizedValue(description)}
+
                     </p>
 
                     <a href="#/" class="app-button">
@@ -47,88 +140,108 @@ function createPage(titleKey, icon, description) {
             </div>
 
         </section>
+
     `;
+
 }
 
-// SPA Routing
+
 export const routes = {
 
-    "/": createPage(
-        "brand",
-        "fa-graduation-cap",
-        {
-            mn: "Цахим сургалтын платформ",
-            en: "Online Learning Platform"
-        }
-    ),
+    "/": {
+        render: renderHomePage,
+        bind: bindHomePage
+    },
 
     "/courses": {
         render: renderCoursesPage,
         bind: bindCoursesPage
     },
 
-    "/instructors": createPage(
-        "nav.instructors",
-        "fa-chalkboard-user",
-        {
-            mn: "Манай сургалтын багш нар",
-            en: "Meet our instructors"
-        }
-    ),
+    "/course": {
+        render: renderCourseDetailsPage,
+        bind: bindCourseDetailsPage
+    },
 
-    "/blog": createPage(
-        "nav.blog",
-        "fa-newspaper",
-        {
-            mn: "Мэдээ, мэдээлэл, зөвлөгөө",
-            en: "News, articles and learning tips"
-        }
-    ),
+    "/instructors": {
+        render: renderInstructorsPage,
+        bind: bindInstructorsPage
+    },
 
-    "/wishlist": createPage(
-        "nav.wishlist",
-        "fa-heart",
-        {
-            mn: "Хадгалсан сургалтууд",
-            en: "Your saved courses"
-        }
-    ),
+    "/blog": {
+        render: renderBlogPage,
+        bind: bindBlogPage
+    },
 
-    "/cart": createPage(
-        "cart.title",
-        "fa-cart-shopping",
-        {
-            mn: "Сонгосон сургалтууд",
-            en: "Your selected courses"
-        }
-    ),
+    "/article": {
+        render: renderArticlePage,
+        bind: bindArticlePage
+    },
 
-    "/notifications": createPage(
-        "nav.notifications",
-        "fa-bell",
-        {
-            mn: "Шинэ мэдээлэл болон мэдэгдлүүд",
-            en: "Latest updates and notifications"
-        }
-    ),
+    "/wishlist": {
+        render: renderWishlistPage,
+        bind: bindWishlistPage
+    },
 
-    "/login": createPage(
-        "auth.login",
-        "fa-user",
-        {
-            mn: "Хэрэглэгчийн бүртгэл",
-            en: "Access your account"
-        }
-    ),
+    "/cart": {
+        render: renderCartPage,
+        bind: bindCartPage
+    },
 
-    "/my-learning": createPage(
-        "learning.title",
-        "fa-graduation-cap",
-        {
-            mn: "Худалдаж авсан сургалтууд",
-            en: "Your purchased courses"
-        }
-    ),
+    "/checkout": {
+        render: renderCheckoutPage,
+        bind: bindCheckoutPage
+    },
+
+    "/login": {
+        render: renderLoginPage,
+        bind: bindLoginPage
+    },
+
+    "/register": {
+        render: renderRegisterPage,
+        bind: bindRegisterPage
+    },
+
+    "/profile": {
+        render: renderProfilePage,
+        bind: bindProfilePage
+    },
+
+    "/my-learning": {
+        render: renderMyLearningPage,
+        bind: bindMyLearningPage
+    },
+
+    "/player": {
+        render: renderPlayerPage,
+        bind: bindPlayerPage
+    },
+
+    "/certificates": {
+        render: renderCertificatePage,
+        bind: bindCertificatePage
+    },
+
+    "/calendar": {
+        render: renderCalendarPage,
+        bind: bindCalendarPage
+    },
+
+    "/notifications": {
+        render: renderNotificationsPage,
+        bind: bindNotificationsPage
+    },
+
+    "/settings": {
+        render: renderSettingsPage,
+        bind: bindSettingsPage
+    },
+
+    "/orders": {
+        render: renderOrderHistoryPage,
+        bind: bindOrderHistoryPage
+    },
 
     "/faq": createPage(
         "footer.faq",
@@ -144,7 +257,7 @@ export const routes = {
         "fa-file-contract",
         {
             mn: "Үйлчилгээний нөхцөлийн мэдээлэл",
-            en: "Terms and conditions of service"
+            en: "Terms and conditions"
         }
     ),
 
@@ -153,7 +266,7 @@ export const routes = {
         "fa-shield-halved",
         {
             mn: "Хэрэглэгчийн мэдээллийн хамгаалалт",
-            en: "Protection of your personal information"
+            en: "Privacy policy"
         }
     ),
 
@@ -162,7 +275,7 @@ export const routes = {
         "fa-envelope",
         {
             mn: "Санал хүсэлт илгээх",
-            en: "Send us your feedback"
+            en: "Contact us"
         }
     ),
 
@@ -171,7 +284,7 @@ export const routes = {
         "fa-triangle-exclamation",
         {
             mn: "Таны хайсан хуудас олдсонгүй",
-            en: "The page you requested was not found"
+            en: "Page not found"
         }
     )
 

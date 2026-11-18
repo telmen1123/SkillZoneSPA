@@ -1,0 +1,110 @@
+
+.skill-navbar {
+
+    .nav-icon-button {
+
+        position: relative;
+
+        overflow: visible;
+
+        transition:
+            background 200ms ease,
+            color 200ms ease;
+
+
+        &.is-active {
+
+            background: #eef3ff;
+
+            color: var(--app-primary);
+
+        }
+
+    }
+
+
+    .nav-count {
+
+        position: absolute;
+
+        top: -5px;
+
+        right: -5px;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        min-width: 19px;
+
+        height: 19px;
+
+        padding: 0 4px;
+
+        border: 2px solid #ffffff;
+
+        border-radius: 999px;
+
+        background: #1455ff;
+
+        color: #ffffff;
+
+        font-size: 10px;
+
+        font-weight: 700;
+
+        line-height: 1;
+
+        pointer-events: none;
+
+        z-index: 2;
+
+
+        &[hidden] {
+
+            display: none !important;
+
+        }
+
+    }
+
+
+    .wishlist-count {
+
+        background: #ef4444;
+
+    }
+
+
+    .cart-count {
+
+        background: #1455ff;
+
+    }
+
+}
+
+
+// ========================================
+// MOBILE
+// ========================================
+
+@media (max-width: 768px) {
+
+    .skill-navbar {
+
+        .nav-count {
+
+            min-width: 18px;
+
+            height: 18px;
+
+            font-size: 10px;
+
+        }
+
+    }
+
+}

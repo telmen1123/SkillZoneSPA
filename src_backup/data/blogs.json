@@ -1,0 +1,129 @@
+
+[
+    {
+        "id": "BL001",
+        "title": {
+            "mn": "Програмчлал сурч эхлэх 5 зөвлөгөө",
+            "en": "5 Tips for Learning Programming"
+        },
+        "description": {
+            "mn": "Програмчлалыг анхлан суралцаж байгаа хүмүүст зориулсан зөвлөгөө.",
+            "en": "Useful tips for beginner programmers."
+        },
+        "content": {
+            "mn": "Нэг програмчлалын хэл сонгож, үндсэн ойлголтуудаа бататгаарай. Өдөр бүр код бичиж, жижиг төсөл хөгжүүл. Алдаанаасаа суралцаж, тогтмол дадлага хий.",
+            "en": "Choose one programming language and master the fundamentals. Code daily, build small projects, learn from mistakes and practice consistently."
+        },
+        "category": "programming",
+        "author": "SkillZone",
+        "date": "2026-11-18",
+        "readTime": 5,
+        "icon": "fa-code",
+        "color": "blue"
+    },
+    {
+        "id": "BL002",
+        "title": {
+            "mn": "Хиймэл оюун ухааныг зөв ашиглах нь",
+            "en": "How to Use Artificial Intelligence"
+        },
+        "description": {
+            "mn": "AI хэрэгслүүдийг суралцах болон ажиллахдаа ашиглах арга.",
+            "en": "Using AI tools for learning and productivity."
+        },
+        "content": {
+            "mn": "Хиймэл оюун ухаанд тодорхой асуулт тавьж, гарсан үр дүнг нягтлаарай. AI хэрэгслийг мэдээлэл боловсруулах, санаа гаргах болон суралцахад туслах хэрэгсэл болгон ашиглаж болно.",
+            "en": "Ask clear questions and verify AI-generated results. Use AI tools to support research, brainstorming and learning."
+        },
+        "category": "ai",
+        "author": "SkillZone",
+        "date": "2026-11-16",
+        "readTime": 4,
+        "icon": "fa-robot",
+        "color": "green"
+    },
+    {
+        "id": "BL003",
+        "title": {
+            "mn": "UI/UX дизайны үндсэн ойлголтууд",
+            "en": "UI/UX Design Fundamentals"
+        },
+        "description": {
+            "mn": "Хэрэглэгчдэд ойлгомжтой, хэрэглэхэд хялбар дизайн бүтээх нь.",
+            "en": "Creating intuitive and user-friendly designs."
+        },
+        "content": {
+            "mn": "Сайн дизайн нь хэрэглэгчийн хэрэгцээг ойлгохоос эхэлдэг. Өнгө, хэмжээ, текст болон элементүүдийн байрлалыг зөв төлөвлөж, загвараа хэрэглэгчээр туршуулаарай.",
+            "en": "Good design starts with understanding user needs. Plan colors, typography and layouts carefully, and test your designs with users."
+        },
+        "category": "design",
+        "author": "SkillZone",
+        "date": "2026-11-14",
+        "readTime": 6,
+        "icon": "fa-pen-ruler",
+        "color": "purple"
+    },
+    {
+        "id": "BL004",
+        "title": {
+            "mn": "Цагаа зөв төлөвлөх арга",
+            "en": "Effective Time Management"
+        },
+        "description": {
+            "mn": "Өдөр тутмын бүтээмжээ нэмэгдүүлэх энгийн аргууд.",
+            "en": "Simple ways to improve daily productivity."
+        },
+        "content": {
+            "mn": "Өдрийн ажлуудаа жагсааж, ач холбогдлоор нь эрэмбэлээрэй. Нэг удаад нэг ажилд төвлөрч, тогтмол завсарлага аваарай.",
+            "en": "List your daily tasks and prioritize them. Focus on one task at a time and take regular breaks."
+        },
+        "category": "personal",
+        "author": "SkillZone",
+        "date": "2026-11-12",
+        "readTime": 3,
+        "icon": "fa-clock",
+        "color": "orange"
+    },
+    {
+        "id": "BL005",
+        "title": {
+            "mn": "React JS яагаад сурах хэрэгтэй вэ?",
+            "en": "Why Learn React JS?"
+        },
+        "description": {
+            "mn": "React ашиглан веб хөгжүүлэхийн давуу талууд.",
+            "en": "Benefits of building web applications with React."
+        },
+        "content": {
+            "mn": "React нь хэрэглэгчийн интерфейсийг дахин ашиглагдах компонентуудаар бүтээх боломж олгодог. JavaScript хэлний үндсийг эзэмшсэний дараа React сурах нь тохиромжтой.",
+            "en": "React enables developers to build user interfaces with reusable components. Learn JavaScript fundamentals before starting React."
+        },
+        "category": "programming",
+        "author": "SkillZone",
+        "date": "2026-11-10",
+        "readTime": 5,
+        "icon": "fa-laptop-code",
+        "color": "cyan"
+    },
+    {
+        "id": "BL006",
+        "title": {
+            "mn": "Англи хэлээ өдөр бүр хөгжүүлэх нь",
+            "en": "Improve Your English Every Day"
+        },
+        "description": {
+            "mn": "Англи хэл сурах дадлыг өдөр тутмын амьдралдаа бий болгох.",
+            "en": "Build daily habits for learning English."
+        },
+        "content": {
+            "mn": "Өдөр бүр шинэ үг сурч, англи хэл дээр бичлэг үзээрэй. Сурсан үгээ өгүүлбэрт ашиглаж, ярианы дадлага тогтмол хийгээрэй.",
+            "en": "Learn new words and watch English videos daily. Use new vocabulary in sentences and practice speaking regularly."
+        },
+        "category": "language",
+        "author": "SkillZone",
+        "date": "2026-11-08",
+        "readTime": 4,
+        "icon": "fa-language",
+        "color": "pink"
+    }
+]

@@ -1,0 +1,106 @@
+
+{
+    "SZ001": [
+        {
+            "id": 1,
+            "title": {
+                "mn": "Сургалтын танилцуулга",
+                "en": "Course introduction"
+            },
+            "video": "./videos/demo.mp4",
+            "duration": 5
+        },
+        {
+            "id": 2,
+            "title": {
+                "mn": "Python суулгах",
+                "en": "Installing Python"
+            },
+            "video": "./videos/demo.mp4",
+            "duration": 10
+        },
+        {
+            "id": 3,
+            "title": {
+                "mn": "Хувьсагч ба өгөгдлийн төрөл",
+                "en": "Variables and data types"
+            },
+            "video": "./videos/demo.mp4",
+            "duration": 15
+        },
+        {
+            "id": 4,
+            "title": {
+                "mn": "Операторууд",
+                "en": "Operators"
+            },
+            "video": "./videos/demo.mp4",
+            "duration": 12
+        },
+        {
+            "id": 5,
+            "title": {
+                "mn": "Нөхцөл шалгах үйлдэл",
+                "en": "Conditional statements"
+            },
+            "video": "./videos/demo.mp4",
+            "duration": 20
+        },
+        {
+            "id": 6,
+            "title": {
+                "mn": "Давталтын оператор",
+                "en": "Loops"
+            },
+            "video": "./videos/demo.mp4",
+            "duration": 18
+        },
+        {
+            "id": 7,
+            "title": {
+                "mn": "Функц",
+                "en": "Functions"
+            },
+            "video": "./videos/demo.mp4",
+            "duration": 25
+        },
+        {
+            "id": 8,
+            "title": {
+                "mn": "Өгөгдлийн жагсаалт",
+                "en": "Lists"
+            },
+            "video": "./videos/demo.mp4",
+            "duration": 15
+        }
+    ],
+    "SZ002": [
+        {
+            "id": 1,
+            "title": {
+                "mn": "React JS танилцуулга",
+                "en": "Introduction to React"
+            },
+            "video": "./videos/demo.mp4",
+            "duration": 10
+        },
+        {
+            "id": 2,
+            "title": {
+                "mn": "React Component",
+                "en": "React components"
+            },
+            "video": "./videos/demo.mp4",
+            "duration": 15
+        },
+        {
+            "id": 3,
+            "title": {
+                "mn": "Props ба State",
+                "en": "Props and state"
+            },
+            "video": "./videos/demo.mp4",
+            "duration": 20
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+
+[
+    {
+        "id": "programming",
+        "translationKey": "categories.programming",
+        "icon": "fa-code",
+        "color": "#1455ff"
+    },
+    {
+        "id": "design",
+        "translationKey": "categories.design",
+        "icon": "fa-pen-ruler",
+        "color": "#8b5cf6"
+    },
+    {
+        "id": "ai",
+        "translationKey": "categories.ai",
+        "icon": "fa-robot",
+        "color": "#06b6d4"
+    },
+    {
+        "id": "business",
+        "translationKey": "categories.business",
+        "icon": "fa-briefcase",
+        "color": "#10b981"
+    },
+    {
+        "id": "marketing",
+        "translationKey": "categories.marketing",
+        "icon": "fa-bullhorn",
+        "color": "#f59e0b"
+    },
+    {
+        "id": "language",
+        "translationKey": "categories.language",
+        "icon": "fa-language",
+        "color": "#ec4899"
+    },
+    {
+        "id": "photography",
+        "translationKey": "categories.photography",
+        "icon": "fa-camera",
+        "color": "#6366f1"
+    },
+    {
+        "id": "personal",
+        "translationKey": "categories.personal",
+        "icon": "fa-seedling",
+        "color": "#14b8a6"
+    }
+]

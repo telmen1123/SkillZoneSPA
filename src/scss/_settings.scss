@@ -1,0 +1,350 @@
+.settings-page {
+    min-height: 85vh;
+    padding: 30px 0 60px;
+    background: var(--sz-bg-f6f8fc, #f6f8fc);
+}
+
+.settings-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: var(--sz-fg-667085, #667085);
+    font-size: 13px;
+    font-weight: 600;
+
+    &:hover {
+        color: var(--sz-fg-1455ff, #1455ff);
+    }
+}
+
+
+// HERO
+
+.settings-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 35px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    background: linear-gradient(120deg, #1455ff, #477aff);
+    color: #ffffff;
+
+    span {
+        color: #bfdbfe;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+
+    h1 {
+        margin: 10px 0;
+        font-size: clamp(24px, 4vw, 36px);
+        font-weight: 800;
+        color: #ffffff;
+    }
+
+    p {
+        color: #dbeafe;
+        font-size: 14px;
+    }
+
+    > i,
+    > svg {
+        font-size: 75px;
+        color: #ffffff50;
+    }
+}
+
+
+// LAYOUT
+
+.settings-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+// CARD
+
+.settings-card {
+    padding: 28px;
+    border: 1px solid var(--sz-border-e4e7ec, #e4e7ec);
+    border-radius: 18px;
+    background: var(--sz-bg-ffffff, #ffffff);
+
+    h2 {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-bottom: 18px;
+        margin-bottom: 24px;
+        border-bottom: 1px solid var(--sz-border-e4e7ec, #e4e7ec);
+        color: var(--sz-fg-101828, #101828);
+        font-size: 19px;
+        font-weight: 750;
+
+        i,
+        svg {
+            color: var(--sz-fg-1455ff, #1455ff);
+        }
+    }
+}
+
+
+// AVATAR
+
+.settings-avatar-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.settings-avatar {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 110px;
+    height: 110px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: var(--sz-bg-e8efff, #e8efff);
+    color: var(--sz-fg-1455ff, #1455ff);
+    font-size: 36px;
+    font-weight: 800;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.settings-avatar-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+
+    small {
+        flex-basis: 100%;
+        color: var(--sz-fg-98a2b3, #98a2b3);
+        font-size: 12px;
+    }
+
+    input[hidden] {
+        display: none !important;
+    }
+}
+
+
+// FORM
+
+.settings-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.settings-field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 20px;
+
+    > span {
+        color: var(--sz-fg-344054, #344054);
+        font-size: 13px;
+        font-weight: 650;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        min-width: 0;
+        padding: 13px 15px;
+        border: 1px solid var(--sz-border-d0d5dd, #d0d5dd);
+        border-radius: 10px;
+        background: var(--sz-bg-ffffff, #ffffff);
+        color: var(--sz-fg-101828, #101828);
+        font-family: inherit;
+        font-size: 14px;
+        outline: none;
+        box-sizing: border-box;
+
+        &:focus {
+            border-color: #1455ff;
+            box-shadow: 0 0 0 3px #1455ff15;
+        }
+
+        &[readonly] {
+            background: var(--sz-bg-f6f8fc, #f6f8fc);
+            color: var(--sz-fg-98a2b3, #98a2b3);
+        }
+    }
+
+    textarea {
+        resize: vertical;
+    }
+}
+
+
+// PASSWORD
+
+.settings-password-field {
+    position: relative;
+
+    input {
+        padding-right: 45px;
+    }
+
+    button {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+        border: none;
+        background: transparent;
+        color: var(--sz-fg-98a2b3, #98a2b3);
+        cursor: pointer;
+
+        &:hover {
+            color: var(--sz-fg-1455ff, #1455ff);
+        }
+    }
+}
+
+.settings-hint {
+    color: var(--sz-fg-98a2b3, #98a2b3);
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+
+// BUTTONS
+
+.settings-button,
+.settings-secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 650;
+    cursor: pointer;
+}
+
+.settings-button {
+    border: none;
+    background: #1455ff;
+    color: #ffffff;
+
+    &:hover {
+        background: #1044da;
+        color: #ffffff;
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: wait;
+    }
+}
+
+.settings-secondary-button {
+    border: 1px solid var(--sz-border-e4e7ec, #e4e7ec);
+    background: var(--sz-bg-ffffff, #ffffff);
+    color: var(--sz-fg-667085, #667085);
+
+    &:hover {
+        background: var(--sz-bg-fff1f2, #fff1f2);
+        color: var(--sz-fg-dc2626, #dc2626);
+    }
+}
+
+.settings-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+
+// MESSAGE
+
+.settings-message {
+    margin-top: 15px;
+    padding: 12px 16px;
+    border-radius: 9px;
+    font-size: 13px;
+
+    &.is-success {
+        background: var(--sz-bg-ecfdf5, #ecfdf5);
+        color: var(--sz-fg-047857, #047857);
+    }
+
+    &.is-error {
+        background: var(--sz-bg-fef2f2, #fef2f2);
+        color: var(--sz-fg-dc2626, #dc2626);
+    }
+
+    &[hidden] {
+        display: none !important;
+    }
+}
+
+
+// NAVBAR AVATAR
+
+.navbar-auth-avatar {
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+// RESPONSIVE
+
+@media (max-width: 768px) {
+
+    .settings-hero {
+        padding: 24px;
+
+        > i,
+        > svg {
+            display: none;
+        }
+    }
+
+    .settings-card {
+        padding: 20px;
+    }
+
+    .settings-form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .settings-avatar {
+        width: 85px;
+        height: 85px;
+    }
+
+    .settings-form-actions {
+        .settings-button {
+            width: 100%;
+        }
+    }
+
+}
